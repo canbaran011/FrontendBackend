@@ -15,14 +15,15 @@ body{
 a{
     color:green;
     text-decoration: none;
+    /* margin:15px 30px; */
 }
 a:hover{
     display:inline-block;
     width:100px;
-    color:red;
+    color:yellow;
     font-size:15px;
-    text-decoration: dotted;
-    background: blue;
+    text-decoration: none;
+    background: blueviolet;
 }
 .btn{
     background-color: #007bff;
@@ -33,7 +34,16 @@ a:hover{
 
 }
 .primary{
-    
+    background-color:#007bff;
+    color: white;
+}
+.secondary{
+    background-color: greenyellow;
+    color:white;
+}
+.warning{
+    background-color: red;
+    color:aliceblue;
 }
 
 </style>
@@ -41,17 +51,10 @@ a:hover{
 </head>
 <body>
     
-<a href="/link1">Link 1</a> <br>
-<a href="/link2">Link 2</a>
-<button>Link 3</button>
-
-
-
-
-
-
-
-
+<a href="/link1" class="btn primary">Link 1</a> 
+<a href="/link1" class="btn secondary">Link 1</a>
+<a href="/link1" class="btn warning">Link 1</a> 
+<a href="/link1" class="btn primary">Link 1</a> 
 
 
 

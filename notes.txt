@@ -1,0 +1,7 @@
+fontawesome:
+
+ <script src="https://kit.fontawesome.com/10f14f4be7.js" crossorigin="anonymous"></script>
+google opensans:
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+font-family: 'Open Sans',Arial ;
