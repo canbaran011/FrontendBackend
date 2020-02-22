@@ -1,0 +1,46 @@
+/* *{
+    border:1px solid blue;
+    margin:0.5em;
+} */
+/* 
+p{
+    border:1px solid red;
+    margin:0.5em;
+
+} */
+
+/* .container div.box{
+    border: 1px solid red;
+    margin: 0.5rem;
+
+}
+
+div p{
+    border: 1px solid red;
+    margin: 0.5rem;
+} */
+
+/* tüm div ve p ler içim */
+/* div,p{
+    margin: 0.5rem;
+    border: 1px solid red;
+
+} */
+/* p nin bir üst etiketi div ise */
+/* div>p{
+    border: 1px solid red;
+    margin: 0.5rem;
+
+} */
+
+/* p~div{
+    border: 1px solid red;
+    margin: 0.5rem;  
+} */
+
+/* p den sonra gelen ilk div  için */
+p + div{
+    border: 1px solid red;
+    margin: 0.5rem;  
+
+}

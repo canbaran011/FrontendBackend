@@ -1,0 +1,31 @@
+p[title]{
+    border: 1px solid red;
+    padding: 5px;
+}
+p[title="third paragraph"]{
+background-color :grey;
+
+}
+p[title~="fourth paragraph"]{
+    background-color: aquamarine;
+}
+
+a[href^="http"]{
+    color:red;
+}
+a[href$="com"]{
+    color:magenta;
+}
+a[href="https://example.com"][target="_blank"]{
+    color:orange;
+}
+
+input[type="text"]{
+    display: block;
+    width:150px;
+}
+input[type="button"]{
+    background-color: green;
+    color:wheat;
+    padding: 8px 16px;
+}

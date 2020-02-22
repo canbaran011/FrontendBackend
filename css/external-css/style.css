@@ -1,0 +1,13 @@
+
+h1{
+    background-color: grey;
+}
+
+a{
+    color:red;
+    text-decoration: none;
+}
+li{
+    display:inline;
+    margin :0.5em;
+}
