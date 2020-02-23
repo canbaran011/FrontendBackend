@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+
+.card{
+    display: inline-block;
+    margin:10px;
+    width:200px;
+    height:200px;
+    background: palevioletred;
+    transition: width 2s, height 3s, background 2s;
+    transition-delay: 1s;
+}
+.card:hover{
+    width: 250px;
+    height: 300px;
+    background: blue;
+}
+#card1{
+    transition-timing-function: ease;
+}
+#card2{
+    transition-timing-function: linear;
+}
+#card3{
+    transition-timing-function: ease-in;
+}
+#card4{
+    transition-timing-function: ease-out;
+}
+#card5{
+    transition-timing-function: ease-in-out ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+    
+<!-- browser support olayları 
+-webkit
+-moz
+-o
+-->
+<div id="card1" class="card"></div>
+<div id="card2" class="card"></div>
+<div id="card3" class="card"></div>
+<div id="card4" class="card"></div>
+<div id="card5" class="card"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
