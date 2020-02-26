@@ -1,7 +1,25 @@
 fontawesome:
 
  <script src="https://kit.fontawesome.com/10f14f4be7.js" crossorigin="anonymous"></script>
+
 google opensans:
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 font-family: 'Open Sans',Arial ;
+
+google lato :
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap" rel="stylesheet">
+font-family: 'Lato', ;
+
+
+google montserrat:
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+font-family: 'Montserrat', ;
+
+.clearfix::after{
+    content:"";
+    display:block;
+    clear:both;
+    
+}
