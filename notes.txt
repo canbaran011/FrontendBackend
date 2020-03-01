@@ -26,3 +26,9 @@ font-family: 'Montserrat', ;
 
 USED one General old version:
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+
+JQUERY CDN :
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  ></script>
