@@ -378,40 +378,207 @@ sayısal ifade ile başlayamaz
 // console.log(d);
 // console.log(typeof d);
 
+//  DERS 9 DATE OBJ UYGULAMA
+
+// var dt = new Date();
+
+
+// // şimdiki tarihin ay yıl gün yazdır.
+// console.log(dt.getMonth()+1);
+// console.log(dt.getDate());
+// console.log(dt.getFullYear());
+
+// console.log(dt);
+
+
+// //tarih ve saat bilgisi içeren date obj oluştur
+// var dta = new Date('8/24/2020');
+// var dtb = new Date(2010,7,24,14,50,10);
+
+
+
+// console.log(dta);
+// console.log(dtb);
+
+// // 1/1/1990 tarihinden bir gün önceyi göster.
+// var dtc = new Date('1/1/1990');
+// var dayOfMonth = dtc.getDate();
+// dtc.setDate(dayOfMonth-1);
+
+
+
+// console.log(dtc);
+// // iki tarih arasındaki geçen zamanı bul
+// var start = new Date('1/1/1990')
+// var end = new Date('1/1/1991');
+
+// var milisecond = end - start;
+// var saniye = milisecond / 1000;
+// var dakika = saniye /60;
+// var saat = dakika / 60;
+// var gun = saat / 24;
+
+// console.log("milisecond : "+milisecond);
+// console.log("saniye : "+saniye);
+// console.log("dakika : "+dakika);
+// console.log("saat : "+saat);
+// console.log("gün : " +gun);
+// // her yıl mayısın ikinci haftası pazar 
+// //günü kutlanan anneler günü 2020 de ne zaman
+// // kullanılacaktır.
+// var annelerGunu = new Date();
+// annelerGunu.setHours(0,0,0,0);
+// annelerGunu.setFullYear(2020);
+// annelerGunu.setDate(1);
+// annelerGunu.setMonth(4);
+
+// while(annelerGunu.getDay() != 0){
+//     annelerGunu.setDate(annelerGunu.getDate()+1)
+// }
+// annelerGunu.setDate(annelerGunu.getDate()+7);
+// console.log(annelerGunu);
+
+
+
+// // yaş hesaplama nasıl yapılır
+// var birthday = new Date('8/1/1986');
+// var ageDifMs = Date.now() - birthday.getTime();
+// var ageDate = new Date(ageDifMs);
+
+// console.log(ageDate.getFullYear() - 1970);
+// // console.log(birthday.getTime());
+// // console.log(Date.now());
+
+//DERS 10 NUMBERS
+
+// let val;
+
+// // val = Number('10');
+// // val = parseInt('10.5');
+// // val =parseFloat('10.5');
+// // val = parseInt('a10a');
+// // val = isNaN('a10a');
+// var num = 10.123456789;
+// val = num.toPrecision(5);
+// val = num.toFixed(3);
+
+// val = Math.PI;
+// val = Math.round(2.4)
+// val = Math.round(2.7);
+// val = Math.ceil(2.4);
+// val = Math.floor(2.9);
+// val = Math.sqrt(64);
+// val = Math.pow(2,4);
+// val = Math.abs(-1425);
+// val = Math.min(1,2,5,6,-3);
+// val = Math.max(1,3,56,54,89);
+// val = Math.random(); // 0- 1 arası
+// val = Math.random()*10;
+// val = Math.floor(Math.random()*100+1);//1den 100e
 
 
 
 
+// console.log(val);
+// console.log(typeof val);
+
+// DERS 11 NUMBERS UYGULAMA
+
+
+//   var num = 15.123456789;
+// // toplam 3 basamaklı sayı 
+
+// console.log(num.toPrecision(3));
+
+// //ondalık kısmı 3 basamakla sınırla
+
+// console.log(num.toFixed(3));
+
+// //en yakın sayıya yuvarla
+
+// console.log(Math.round(num));
+
+// //aşağı yuvarla
+ 
+// console.log(Math.floor(num));
+
+// //yukarı yuvarla
+
+// console.log(Math.ceil(num));
+
+// // 1,2,10,56,20 min max değerlerini bul
+// // num = 1,2,10,56,20;
+// console.log(Math.min(1,2,10,56,20));
+// console.log(Math.max(1,2,10,56,20));
+
+// // sayı aralığını kullanıcının gireceği rastgele
+// // bir sayı üretin.
+
+// var min = 50;
+// var max = 100;
+
+// console.log(Math.floor(min+Math.random()*(max-min)));
+
+// /*
+// personelin yaptığı mesai ye göre aldığı maaşı 
+// hesaplayalım.
+// ** Brüt Maaş: 3700 TL
+// ** Brüt mesai: 10.3 TL
+//     Ağustos ayı mesai toplamı 42 saat ise toplam 
+//     brüt maaş nedir?
+//     Brüt maaş üzerinden toplam kesinti oranı 
+//     %25 ise alınacak toplam net maaş nedir?
+    
+// */
+
+// let brutMaas = 3700;
+// let brutMesai= 10.3;
+// let mesaiSure = 42;
+
+// topBrut = parseFloat((brutMaas + (brutMesai * mesaiSure)));
+// sonMaas = parseFloat(topBrut*0.75);
+
+// console.log(topBrut.toFixed(2));
+// console.log(sonMaas.toFixed(2));
+
+// DERS 12 STRINGS
+
+const firstName = 'CanBaran';
+const lastName = "Gündüz";
+const age = 24;
+let val;
+
+//string concatenation
+
+val = firstName + " " + lastName;
+val = 'CanBaran';
+val += "Gündüz";
+
+val = 'Benim adım '+firstName+' ' +lastName+
+' yaşım '+ age + " İzmir'de yaşıyorum"
+
+//string concat
+
+val = firstName.concat(' ',lastName)
+
+//string length
+
+val = val.length;
+
+//string uppercase- lowercase
+
+// val = val.toUpperCase();
+// val = val.toLowerCase();
+
+val = val.indexOf('a');
+val = val.substring(3,8);
+//
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(val);
+console.log(typeof val);
 
 
 
