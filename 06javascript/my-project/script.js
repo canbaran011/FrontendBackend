@@ -7,13 +7,12 @@
 // console.error("hata oluştu");
 // console.warn("bir uyarı");
 
-
-// /* 
+// /*
 // yorum
 // */
 // console.clear();
 
-// DERS 2 = DEĞİŞKENLER 
+// DERS 2 = DEĞİŞKENLER
 
 // Değişken tanımlama kuralları
 
@@ -48,12 +47,10 @@ sayısal ifade ile başlayamaz
 // let city= 'Kocaeli';
 // console.log(city);
 
-
 // const email= 'abc@gmail.com';
 // console.log(email);
 
 // email = 'bcg';
-
 
 // console.log("++++++++++++++++++++++++++++");
 
@@ -69,7 +66,6 @@ sayısal ifade ile başlayamaz
 
 // fullName='JBL CBG'
 // console.log(fullName);
-
 
 //DERS 3 DEĞİŞKEN TİPLERİ
 
@@ -97,7 +93,6 @@ sayısal ifade ile başlayamaz
 // console.log(typeof car);
 
 // // Reference Types
-
 
 // //array
 // let names= ['ali','ahmet','can'];
@@ -150,7 +145,6 @@ sayısal ifade ile başlayamaz
 // console.log(val);
 // console.log(typeof val);
 
-
 // // array to string
 
 // val = String([1,2,3,4])
@@ -171,12 +165,11 @@ sayısal ifade ile başlayamaz
 // console.log(v);
 // console.log(typeof v);
 
-
 // // string to Number
 // //length sadece string uzunluğunu bulur.
 // let val;
 // val = Number ('10'); //10
-// val = Number(true); //1 
+// val = Number(true); //1
 // val = Number(false); //0
 // val = Number(null); // 0  console.log(val);
 // val = Number('a'); //Nan Not a Number
@@ -186,15 +179,13 @@ sayısal ifade ile başlayamaz
 // console.log(typeof val);
 // console.log(val.toFixed(2));
 
-
 // //parseInt
 // //parseFloat
 
 // let nmb, nmb2,nmb3;
 // nmb = parseInt('10'); //10
-// nmb2 = parseInt('10.5'); //10 
+// nmb2 = parseInt('10.5'); //10
 // nmb3 = parseFloat('10.5'); //10.5
-
 
 // console.log(nmb , nmb2 ,nmb3); //up
 // console.log(typeof nmb ); //number all below
@@ -266,7 +257,6 @@ sayısal ifade ile başlayamaz
 // val = --d;
 // val = d--;
 
-
 // // 2 atama operatörleri
 
 // val = a;
@@ -290,8 +280,6 @@ sayısal ifade ile başlayamaz
 // val = a<=b;
 // //eşittir sağ tarafta olmalı
 
-
-
 // // 4 mantıksal operatörler
 // // && (and) 1 ve 1 = 1 , others 0
 //   val =  (a>b) && (a>c)
@@ -307,11 +295,9 @@ sayısal ifade ile başlayamaz
 // console.log(val);
 // console.log(typeof val);
 
-
 // DERS 7 OPERATÖRLER UYGULAMA
 // let IndexCan;
 // let IndexAda;
-
 
 // const kgCan = 60;
 // const kgAda = 62;
@@ -341,16 +327,13 @@ sayısal ifade ile başlayamaz
 // console.log("adakilolu : " + adaKilolu);
 // console.log("adaşişman: " + adaSisman);
 
-
 // console.log(IndexAda.toFixed(1) + " = ada");
 // console.log(IndexCan.toFixed(1) + " = can");
 
 // DERS 8 DATE OBJECT
 
-
 // let d = new Date();
 // let birthday = new Date(1990,1,5);
-
 
 // //SET Methods
 
@@ -359,9 +342,6 @@ sayısal ifade ile başlayamaz
 // d.setDate(24);
 // d.setHours(10);
 // d.setMinutes(12)
-
-
-
 
 // //GET Methods
 // console.log(d.getDate());
@@ -374,14 +354,12 @@ sayısal ifade ile başlayamaz
 // console.log(d.getFullYear() - birthday.getFullYear());
 // console.log(d.getDay() - birthday.getDay());
 
-
 // console.log(d);
 // console.log(typeof d);
 
 //  DERS 9 DATE OBJ UYGULAMA
 
 // var dt = new Date();
-
 
 // // şimdiki tarihin ay yıl gün yazdır.
 // console.log(dt.getMonth()+1);
@@ -390,12 +368,9 @@ sayısal ifade ile başlayamaz
 
 // console.log(dt);
 
-
 // //tarih ve saat bilgisi içeren date obj oluştur
 // var dta = new Date('8/24/2020');
 // var dtb = new Date(2010,7,24,14,50,10);
-
-
 
 // console.log(dta);
 // console.log(dtb);
@@ -404,8 +379,6 @@ sayısal ifade ile başlayamaz
 // var dtc = new Date('1/1/1990');
 // var dayOfMonth = dtc.getDate();
 // dtc.setDate(dayOfMonth-1);
-
-
 
 // console.log(dtc);
 // // iki tarih arasındaki geçen zamanı bul
@@ -423,7 +396,7 @@ sayısal ifade ile başlayamaz
 // console.log("dakika : "+dakika);
 // console.log("saat : "+saat);
 // console.log("gün : " +gun);
-// // her yıl mayısın ikinci haftası pazar 
+// // her yıl mayısın ikinci haftası pazar
 // //günü kutlanan anneler günü 2020 de ne zaman
 // // kullanılacaktır.
 // var annelerGunu = new Date();
@@ -437,8 +410,6 @@ sayısal ifade ile başlayamaz
 // }
 // annelerGunu.setDate(annelerGunu.getDate()+7);
 // console.log(annelerGunu);
-
-
 
 // // yaş hesaplama nasıl yapılır
 // var birthday = new Date('8/1/1986');
@@ -476,17 +447,13 @@ sayısal ifade ile başlayamaz
 // val = Math.random()*10;
 // val = Math.floor(Math.random()*100+1);//1den 100e
 
-
-
-
 // console.log(val);
 // console.log(typeof val);
 
 // DERS 11 NUMBERS UYGULAMA
 
-
 //   var num = 15.123456789;
-// // toplam 3 basamaklı sayı 
+// // toplam 3 basamaklı sayı
 
 // console.log(num.toPrecision(3));
 
@@ -499,7 +466,7 @@ sayısal ifade ile başlayamaz
 // console.log(Math.round(num));
 
 // //aşağı yuvarla
- 
+
 // console.log(Math.floor(num));
 
 // //yukarı yuvarla
@@ -520,15 +487,15 @@ sayısal ifade ile başlayamaz
 // console.log(Math.floor(min+Math.random()*(max-min)));
 
 // /*
-// personelin yaptığı mesai ye göre aldığı maaşı 
+// personelin yaptığı mesai ye göre aldığı maaşı
 // hesaplayalım.
 // ** Brüt Maaş: 3700 TL
 // ** Brüt mesai: 10.3 TL
-//     Ağustos ayı mesai toplamı 42 saat ise toplam 
+//     Ağustos ayı mesai toplamı 42 saat ise toplam
 //     brüt maaş nedir?
-//     Brüt maaş üzerinden toplam kesinti oranı 
+//     Brüt maaş üzerinden toplam kesinti oranı
 //     %25 ise alınacak toplam net maaş nedir?
-    
+
 // */
 
 // let brutMaas = 3700;
@@ -543,42 +510,935 @@ sayısal ifade ile başlayamaz
 
 // DERS 12 STRINGS
 
-const firstName = 'CanBaran';
-const lastName = "Gündüz";
-const age = 24;
-let val;
+// const firstName = 'CanBaran';
+// const lastName = "Gündüz";
+// const age = 24;
+// let hobbies = 'sinema,spor,kitap,yazılım';
+// let val;
 
-//string concatenation
+// //string concatenation
 
-val = firstName + " " + lastName;
-val = 'CanBaran';
-val += "Gündüz";
+// val = firstName + " " + lastName;
+// val = 'CanBaran';
+// val += ' Gündüz';
 
-val = 'Benim adım '+firstName+' ' +lastName+
-' yaşım '+ age + " İzmir'de yaşıyorum"
+// // val = 'Benim adım '+firstName+' ' +lastName+
+// // ' yaşım '+ age + " İzmir'de yaşıyorum";
 
-//string concat
+// //string concat
 
-val = firstName.concat(' ',lastName)
+// // val = firstName.concat(' , ',lastName);
 
-//string length
+// //string length
 
-val = val.length;
+// // val = val.length;
 
-//string uppercase- lowercase
+// //string uppercase- lowercase
 
-// val = val.toUpperCase();
-// val = val.toLowerCase();
+// // val = val.toUpperCase();
+// // val = val.toLowerCase();
 
-val = val.indexOf('a');
-val = val.substring(3,8);
-//
+// // val = val.indexOf('a');
+
+// //substring
+// // val = val.substring(3,8);
+
+// //slice
+
+// // val = val.slice(5); //5 ten bitişe
+
+// //string replace
+
+// val= ' ' +val.replace('CanBaran','NRCML')+ '  ' ;
+
+// // trim
+// val = val.trim();
+
+// val = hobbies.split(',')
+
+// console.log(val);
+// console.log(typeof val);
+
+// // DERS 13 TEMPLATE LITERALS
+
+// const fullName = 'Can Baran';
+// const city = 'İzmir';
+// const yearOfBirth = 1999;
+
+// let val;
+
+// val = 'my name is '+ fullName +
+//  ' I\'m '+(2020-yearOfBirth) + ' years old.' +
+//  ' and I live in '+city;
+
+// val = ` my name is ${fullName} I'm
+// ${(2020-yearOfBirth)>=18? 'over 18':'under 18'}
+// years old and i live in ${city} `
+
+// console.log(val);
+
+// DERS 14 : STRINGS UYGULAMA
+
+// var sentence = " Template literals or template  strings is the ability Have multi-line strings without any funny busisness. ";
+
+// var url = "http://sadikturan.com/Modern Javascript KURSU sıfırdan ileri seviye";
+
+// //cümle kaç karakterlidir
+
+// let val;
+// console.log(sentence.length);
+
+// //kaç kelimeden oluşuyor
+
+// console.log(sentence.trim().split(' ').length);
+
+// // küçük harfe çevir
+
+// console.log(sentence.toLowerCase());
+// console.log(sentence.toLocaleUpperCase());
+
+// //baş ve sontaki boşlukları sil
+
+// console.log(sentence.trim());
+
+// // '-' karakterini silin.
+
+// console.log(sentence.replace('-',' '));
+
+// // urlnin içinden str kısmını çıkarın.
+//  var str = 'http://';
+//  console.log(url.substr(str.length));
+// console.log(url.slice(str.length));
+
+// //url hangi protokolü kullanmaktadır.
+// console.log(url.startsWith('http'));
+// console.log(url.startsWith('https'));
+
+// //url com içeriyor mu?
+// console.log(url.indexOf('.com'));
+// console.log(url.includes('.com'));
+
+// // geçerli haline çevir
+// console.log(url.toLocaleLowerCase()
+//         .replace(/ /g,'-')
+//         .replace(/ı/g,i)
+
+// );
+
+// DERS 15 ARRAYS
+
+// let names = ['can','çınar','ada','yiğit'];
+
+// let years =[2017,1995,2005,2000];
+
+// let mix = ['can', 'baran' , 1995,null,undefined,
+// ['sinema','kitap']];
+
+// // // get array item
+// // console.log(names[0]);
+// // console.log(names[3]);
+
+// // //set array item
+// // // names[5] ='emel'; //4 e boş eleman 5 e emeli atar
+// // names[names.length] = 'emel' //sona ekler
+
+// // //add item
+// // years.push(1986);
+// // years.unshift(1987);
+
+// // //remove item
+// // years.pop();
+// // years.shift();
+
+// // //indexof
+// // let index=names.indexOf('ada');
+// // console.log(index +" index");
+
+// // //reverse
+// // names.reverse();
+
+// // //sort
+// // years.sort();
+
+// // //concat
+// // let val = years.concat(names);
+// // console.log(val);
+
+// //splice
+// // names.splice(2,0,'seda');
+// //2. elemandan sonra kimseyi silmeyip
+// //sonrasına seda yı ekledi
+
+// //fun
+
+// function over18(year){
+//     let age = 2020 - year;
+//     return age >= 18;
+// }
+
+// //find //bulduğu ilk değeri döner
+
+// // let val =years.find(over18);
+
+// //filter
+
+// let val = years.filter(over18)
+
+// console.log(val);
+
+// console.log(names);
+// console.log(names.length);
+// console.log(typeof names);
+// console.log("++++++++++++++++++++++");
+// // console.log(years);
+// // console.log(mix);
+// // console.log("++++++++++++++++++++++");
+
+// DERS 16 ARRAYS UYGULAMA
+
+// //dizi oluştur.
+// let oto = ['Bmw', 'Mercedes','Opel','Mazda'];
+// console.log(oto);
+// // Dizi kaç elemanlıdır
+
+// console.log(oto.length);
+
+// //dizinin ilk ve son elemanı nedir?
+
+// console.log(oto[0]+' '+oto[oto.length-1]);
+
+// //renault değerini sona ekle
+
+// console.log(oto.push('renault'));
+// console.log(oto);
+
+// //toyota başa ekle
+// console.log(oto.unshift('toyota'));
+// console.log(oto);
+
+// //renault sil
+// console.log(oto.pop('renault'));
+// console.log(oto);
+
+// //toyota sil
+// console.log(oto.shift('toyota'));
+// console.log(oto);
+
+// //diziyi ters çevir
+// console.log(oto.reverse());
+// console.log(oto);
+
+//  //alfabetik sırala
+//  console.log(oto.sort());
+
+//  //[1,2,5,80] dizisini sıralayın.
+
+// let num = [1,2,5,80];
+// console.log(num.sort());
+
+// //opel dizinin elemanı mı ?
+
+// console.log(oto.indexOf('Opel'));
+// console.log(oto.includes('Opel'));
+
+// // var str = "Chevrolet,Dacia";
+// // ifadesini diziye çevir
+
+// var str = "Chevrolet,Dacia";
+// var str2 = str.split(',');
+// console.log(str2);
+
+// // oluşturulan 2 dizinin elemanlarını başka dizi
+// // ile birleştirin...
+
+// var str3 = oto.concat(str2);
+// console.log( str3 );
+
+// // oluşan dizinin son 2 elemanını sil
+// // console.log(str3.pop());
+// // console.log(str3.pop());
+
+// // console.log(str3.splice(4,2));
+// //console.log(slice(4,6));
+
+// /*
+// aşağıdaki elemanları bir dizi içerisinde saklayınız
+
+// studentA : Yiğit Bilgi 2010
+// studentB : Can  Baran 1995
+// studentC : Mahmu Tuncer 2000
+
+// */
+// var studentA =['Yiğit' ,'Bilgi', 2010];
+// var studentB =['Can', 'Baran' ,1995];
+// var studentC =['Mahmut' ,'Tuncer', 2000];
+
+// var students = [studentA,studentB,studentC];
+
+// console.log(students[0][1]);
+// console.log(students);
+
+// DERS 17 KOŞUL İFADELERİ
+
+// const firsName = "Sena";
+// const age = 19;
+// const isStudent = false;
+// const school = "university";
+
+// if(firsName === 'Sena'){
+//     console.log('merhaba Sena');
+// }
+// if(age ===19){
+//     console.log('yaşınız 19');
+// }
+// if(isStudent){
+//     console.log('merhaba öğrenci');
+// }
+// else{
+// console.log('işler nasıl');
+// }
+
+// if (age >= 18) {
+//   if (school == "university") {
+//     console.log("ehliyet alabilirsin");
+//   } else {
+//     console.log("eğitim yetersiz");
+//   }
+// } else {
+//   console.log("yoooo alamazsın");
+// }
+
+// if(  (age > 0) && (age<12) ){
+//     console.log(` ${firstName} is a child`);
+// }
+// else if( age >= 13 && age<=19){
+//     console.log(` ${firsName} is a teenager `);
+// }
+// else{
+//     console.log(` ${firstName} is an adult `);
+// }
+// let id = '3123112'
+
+// if(typeof id !== 'undefined'){
+//     console.log('id: '+id);
+// }
+// else{
+//     console.log('no id');
+// }
+
+
+//  DERS 18 SWITCH
+
+// let category = 'beyaz eşya';
+
+// switch(category){
+//     case 'telefon':
+//         console.log('tel kategorisi');
+//     break;
+
+//     case 'bilgisayar':
+//         console.log('bilgisayar kat');
+//     break;
+
+//     default:
+//         console.log('yanlış');
+
+// }
+
+// let day;
+// switch (new Date().getDay()) {
+//   case 0:
+//     day = "Pazar";
+//     break;
+
+//   case 1:
+//     day = "Pazartesi";
+//     break;
+
+//   case 2:
+//     day = "Salı";
+//     break;
+
+//   case 3:
+//     day = "Çarşamba";
+//     break;
+
+//   case 4:
+//     day = "Perşembe";
+//     break;
+    
+//   case 5:
+//     day = "Cuma";
+//     break;
+
+//   case 6:
+//     day = "Cumartesi";
+//     break;
+// }
+// console.log(`bugün günlerden ${day}`);
+// switch (new Date().getDay()) {
+//   case 0:
+//   case 6:
+//     day = "Hafta Sonu";
+//   case 1:
+//   case 2:
+//   case 3:
+//   case 4:
+//   case 5:
+//     day = "Haftaİçi";
+// }
+
+// console.log(`bugün  ${day}`);
+// const age = 19;
+// const firstName = 'Sena';
+
+// switch(true){
+//     case age>=0 && age<12:
+//         console.log('child');
+//         break;
+
+//     case age>=13 && age<19:
+//         console.log('teenager');
+//         break;
+
+//     case age>19:
+//         console.log('adult');
+//         break;
+//     default:
+//         console.log('yanlış');
+//     }
+
+// DERS 19 KOŞUL UYGULAMA
+
+// var trafigeCikis = new Date('04/20/2016');
+// trafigeCikis.setHours(0,0,0,0);
+// var trafiktekiMs = Date.now() - trafigeCikis.getTime();
+// var trafiktekiGun = Math.floor(trafiktekiMs / (1000*60*60*24));
+
+// if(trafiktekiGun<=365){
+//     console.log('1.servis zamanı');
+// }
+// else if(trafiktekiGun>=365 && trafiktekiGun<=365*2){
+//     console.log('2. servis zamanı');
+// }
+// else if(trafiktekiGun>365*2 && trafiktekiGun<=365*3){
+//     console.log('3. servis zamanı');
+// }else{
+//     console.log('bilmiyorum');
+// }
+
+
+// // console.log(trafiktekiGun.toFixed());
+
+// var result = prompt('who is there?');
+
+// if(result == 'cancel'){
+//     console.log('cancelled');
+// }
+// else if(result == 'Admin'){
+   
+//     var password = prompt('enter your password');
+
+//         if(password == 'cancel'){
+//             console.log('cancelled');
+//         }else if(password == '1234'){
+//             console.log('welcome admin2');
+//         }else{
+//             console.log('wrong password');
+//         }
+// }
+// else{
+//     console.log('i dont know you');
+// }
+
+// DERS 20 OBJECT LITERALS
+
+// let val;
+
+// let person = {
+//     firstName: 'CanBaran',
+//     lastName: 'Gündüz',
+//     age:1,
+//     hobbies : ['music','game','spor'],
+//     address :{
+//         city:'izmir',
+//         country: 'Türkiye',
+//         },
+//     getBirthYear :function(){
+//         return 2020 - this.age;//person u işaret eder
+//     }
+// };
+
+// val = person;
+// val = person.firstName;
+// val = person.lastName;
+// val = person['firstName'];
+// val = person.age;
+// val = person.hobbies;
+// val = person.hobbies[1];
+// val = person.address;
+// val = person.address.city;
+// val = person.getBirthYear();
+
+
+// let people = [
+//     {firsName: 'CanBaran',lastName:'Gündüz'},
+//     {firsName: 'Nurcemal',lastName:'Gündüz'},
+//     {firsName: 'Uygar',lastName:'Gündüz'},
+// ];
+
+// val = people[2];
+// val = people[2].firsName;
+
+// for(let i=0; i<people.length ; i++){
+//     console.log(people[i].firsName);
+// }
+
+// console.log(val);
+// console.log(typeof person);
+
+// DERS 21 OBJECT LIT UYGULAMA
 
 
 
 
-console.log(val);
-console.log(typeof val);
+// var aracBilgileri =[
+//  {
+//     id: 'bmw116d_1234',
+//     model:'bmw 116d',
+//     yil: 2015,
+//     renk: 'Beyaz',
+//     servisKayitlari: [
+//         {
+//             id:'bmw116d_1234_1',
+//             tarih: '20.001.2016',
+//             km : '13000',
+//             ucret:900,
+//             detay: [
+//                 {
+//                     id: 'bmw116d_1234_1_1',
+//                     aciklama:'yağ değişimi ücret',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw116d_1234_1_2',
+//                     aciklama:'filtre değişimi ',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw116d_1234_1_3',
+//                     aciklama:'fren hidroliği',
+//                     ucret:300
+//                  }
+//             ]
+//         },
+//         {
+//             id:'bmw116d_1234_2',
+//             tarih: '10.01.2017',
+//             km : '28000',
+//             ucret:1800,
+//             detay: [
+//                 {
+//                     id: 'bmw116d_1234_2_1',
+//                     aciklama:'yağ değişimi ücret',
+//                     ucret:350
+//                  },
+//                  {
+//                     id: 'bmw116d_1234_2_2',
+//                     aciklama:'filtre değişimi ',
+//                     ucret:350
+//                  },
+//                  {
+//                     id: 'bmw116d_1234_2_3',
+//                     aciklama:'fren hidroliği',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw116d_1234_2_4',
+//                     aciklama:'balata değişimi',
+//                     ucret:800
+//                  }
+//             ]
+//         }
+
+//     ]
+// },
+// {
+//     id: 'bmw118d_1234',
+//     model:'bmw 118d',
+//     yil: 2016,
+//     renk: 'Beyaz',
+//     servisKayitlari: [
+//         {
+//             id:'bmw118d_1234_1',
+//             tarih: '20.001.2016',
+//             km : '13000',
+//             ucret:900,
+//             detay: [
+//                 {
+//                     id: 'bmw118d_1234_1_1',
+//                     aciklama:'yağ değişimi ücret',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw118d_1234_1_2',
+//                     aciklama:'filtre değişimi ',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw118d_1234_1_3',
+//                     aciklama:'fren hidroliği',
+//                     ucret:300
+//                  }
+//             ]
+//         },
+//         {
+//             id:'bmw118d_1234_2',
+//             tarih: '10.01.2017',
+//             km : '28000',
+//             ucret:1800,
+//             detay: [
+//                 {
+//                     id: 'bmw118d_1234_2_1',
+//                     aciklama:'yağ değişimi ücret',
+//                     ucret:350
+//                  },
+//                  {
+//                     id: 'bmw118d_1234_2_2',
+//                     aciklama:'filtre değişimi ',
+//                     ucret:350
+//                  },
+//                  {
+//                     id: 'bmw118d_1234_2_3',
+//                     aciklama:'fren hidroliği',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bbmw118d_1234_2_4',
+//                     aciklama:'balata değişimi',
+//                     ucret:800
+//                  }
+//             ]
+//         }
+
+//     ]
+// },
+// {
+//     id: 'bmw320d_1234',
+//     model:'bmw 320d',
+//     yil: 2018,
+//     renk: 'Beyaz',
+//     servisKayitlari: [
+//         {
+//             id:'bmw320d_1234_1',
+//             tarih: '20.01.2016',
+//             km : '13000',
+//             ucret:900,
+//             detay: [
+//                 {
+//                     id: 'bmw320d_1234_1_1',
+//                     aciklama:'yağ değişimi ücret',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw320d_1234_1_2',
+//                     aciklama:'filtre değişimi ',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw320d_1234_1_3',
+//                     aciklama:'fren hidroliği',
+//                     ucret:300
+//                  }
+//             ]
+//         },
+//         {
+//             id:'bmw320d_1234_2',
+//             tarih: '10.01.2017',
+//             km : '28000',
+//             ucret:1800,
+//             detay: [
+//                 {
+//                     id: 'bmw320d_1234_2_1',
+//                     aciklama:'yağ değişimi ücret',
+//                     ucret:350
+//                  },
+//                  {
+//                     id: 'bmw320d_1234_2_2',
+//                     aciklama:'filtre değişimi ',
+//                     ucret:350
+//                  },
+//                  {
+//                     id: 'bmw320d_1234_2_3',
+//                     aciklama:'fren hidroliği',
+//                     ucret:300
+//                  },
+//                  {
+//                     id: 'bmw320d_1234_2_4',
+//                     aciklama:'balata değişimi',
+//                     ucret:800
+//                  }
+//             ]
+//         }
+
+//     ]
+// }
+
+// ];
+
+// console.log(aracBilgileri[0]);
+// console.log(aracBilgileri[1].id);
+// console.log(aracBilgileri[2].model);
+// console.log(aracBilgileri[2].renk);
+// console.log(aracBilgileri[2].renk);
+// console.log(aracBilgileri[2].servisKayitlari);
+// console.log(aracBilgileri[2]
+//     .servisKayitlari[0].detay[0]);
+
+// DERS 22 LOOPS
+ 
+//loops
+
+// // for loops
+
+// for(let i=0; i<10 ; i++){
+
+//     if(i==3){
+//         console.log('en sevdiğim sayı 3');
+//         continue; //sonrakine geçer.
+//     }
+//     if(i==6){
+//         console.log('en sevmediğim rakam 6');
+//         break; //durur orada
+//     }
+// console.log(i);
+// }
+
+// while döngüsü
+
+// let i=1;
+
+// while(i<20){
+//     console.log(i);
+//     i++;
+// }
+
+// do -while döngüsü
+// let i=0;
+// do{
+//     console.log(i);
+//     i++;
+// }while(i<10);
+
+/* ++++++++++++++++++++++ */
+
+// let sonuc =0;
+
+// for(let i=10 ; i>0 ; i--){
+   
+//    if(i%2 == 0){
+//     sonuc += i;
+//    }
+
+// }
+// console.log(sonuc);
+
+// let val='\n'
+// for(let i =0; i<10 ; i++){
+//     for(let j=0; j<10 ; j++){
+//         // console.log(`i : ${i} j: ${j}`);
+//         val += '<|>'
+//     }
+//     val += '\n';
+// }
+// console.log(val);
+
+// DERS 23 LOOPS ON ARRAYS
+
+// let cars =['bmw','fiat','toyo'];
+// let people =[
+//     {firstName:'Can', lastName:'Gündüz'},
+//     {firstName:'Rıfat', lastName:'Ilgaz'},
+//     {firstName:'Mahmut', lastName:'Tuncer'}
+// ]
+
+//Object
+// for(let i=0; i<people.length; i++ ){
+//     console.log(people[i].firstName);
+// }
+
+//Arrays
+// for(let i=0; i<cars.length ; i++){
+//     console.log(cars[i]);
+// }
+
+
+//For In
+// for(let i in cars){
+//     console.log(`index : ${i} value : ${cars[i]}`);
+// }
+
+// for(let i in people){
+//  console.log(`index : ${i} value : ${people[i].firstName}`);
+
+// }
+
+// console.log(typeof cars);
+
+// FOR EACH
+
+// cars.forEach(function(item){
+//     console.log(item);
+
+// });
+// people.forEach(function(item){
+// console.log(item.firstName);
+// });
+
+//map : returns an array
+// let val = people.map(function(item){
+// return item.firstName+' '+item.lastName;
+// });
+
+// console.log(val);
+
+// let numbers = [1,5,6,8,10];
+
+// let num =  numbers.map(function(n){
+//     return n*n;
+// });
+// console.log(num);
+
+// DERS 24 DÖNGÜ UYGULAMA
+
+/* sayı tahmini oyunu
+1-10 arasında rastgele üretilebilen bir sayıyı
+aşağı yukarı ifadeleri ile buldurmaya çalışın.
+** puanlama yapın 100 üzerinde
+** kullanıcı kaç kerede bilebileceğini belirtsin.
+*/
+
+
+let random = Math.floor(Math.random()*10+1);
+var times= Number(prompt('kaç seferde bilirsin'));
+
+
+while( times>0 ){
+    times--;
+    var guess = Number(prompt('Guess the Random Number?'));
+    
+    if(guess == random){
+        alert('Bildiniz! ');
+        break;
+    }else if(guess >random){ 
+        guess = prompt('Guess Lower');
+        
+    }else
+        guess = prompt('Guess Higher');
+        
+
+        if(times==0){
+        alert('hakkın bitti birader');
+        
+        }
+}
+
+
+// console.log('right');
+// console.log(random);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
