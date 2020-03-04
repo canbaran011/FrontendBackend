@@ -1317,35 +1317,246 @@ aşağı yukarı ifadeleri ile buldurmaya çalışın.
 ** puanlama yapın 100 üzerinde
 ** kullanıcı kaç kerede bilebileceğini belirtsin.
 */
+// var hak,can;
+// var tahmin , sayac=0;
+// var sayi = Math.floor((Math.random()*10)+1);
+// can = Number(prompt('kaç kere de bileceksin ?'));
+// hak =can;
 
+// console.log(sayi);
 
-let random = Math.floor(Math.random()*10+1);
-var times= Number(prompt('kaç seferde bilirsin'));
-
-
-while( times>0 ){
-    times--;
-    var guess = Number(prompt('Guess the Random Number?'));
-    
-    if(guess == random){
-        alert('Bildiniz! ');
-        break;
-    }else if(guess >random){ 
-        guess = prompt('Guess Lower');
-        
-    }else
-        guess = prompt('Guess Higher');
-        
-
-        if(times==0){
-        alert('hakkın bitti birader');
-        
-        }
-}
-
+// while(hak>0){
+//     hak--;
+//     sayac++;
+//     tahmin = Number(prompt('bir sayı girin'));
+//     if(sayi==tahmin){
+//         alert(`Tebriks ${sayac} defada bildin.`);
+//         alert(`puan : ${100 -(100/can)*(sayac-1)}`);
+//         break;
+//     }else if(sayi>tahmin){
+//         alert(`HIGHER`);
+//     }else{
+//         alert('DOWN')
+//     }
+//     if(hak ==0){
+//         alert('dur hele soluklan yeğenim.\n HAKKIN BİTTİ');
+//     }
+// }
 
 // console.log('right');
 // console.log(random);
+
+// DERS 25 FUNCTIONS 
+// function yasHesapla(dogumYili){
+//     ;
+
+//     return  2020 - dogumYili;;
+// }
+
+// let ageCan =yasHesapla(1995);
+// let ageUmut =yasHesapla(2002);
+// let ageYusuf=yasHesapla(1997);
+
+// console.log(ageCan);
+// console.log(ageUmut);
+// console.log(ageYusuf);
+
+// function EmeklilikKacYil(dogumYili,isim){
+//     let yas = yasHesapla(dogumYili);
+//     let emeklilik = 65 - yas ;
+
+//     if(emeklilik>0){
+//         console.log(`${isim} Emekli olmanıza 
+//         ${emeklilik} yıl kaldı.`);
+//     }else{
+//         console.log(`zaten emekli oldunuz:`+isim);
+//     }
+// }
+
+// EmeklilikKacYil(1995,'can');
+// EmeklilikKacYil(2000,'rasim');
+// EmeklilikKacYil(1900,'mahmut');
+
+//DERS 26 FUNCTION UYGULAMA
+
+// var hesapA = {
+//     ad:'can baran',
+//     hesapNo : '12345',
+//     bakiye : 2000,
+//     ekHesap : 1000
+// }
+
+// var hesapB = {
+//     ad:'emel baran',
+//     hesapNo : '123456',
+//     bakiye : 3000,
+//     ekHesap : 2000
+// }
+
+// function paraCek(hesap,miktar){
+//     console.log(`Merhaba ${hesap.ad}`);
+//     if(hesap.bakiye >= miktar){
+//         hesap.bakiye = hesap.bakiye -miktar;
+//         console.log(`paranızı alabilirsiniz.`);
+//     }else{
+//         var toplam = hesap.bakiye+hesap.ekHesap;
+//         if(toplam >= miktar){
+//             if(confirm('ek hesap kullan?')){
+//                 console.log('paranı al.');
+//                 var bakiye = hesap.bakiye;
+//                 var ekHesap = miktar - bakiye;
+//                 hesap.bakiye =0;
+//                 hesap.ekHesap = hesap.ekHesap - ekHesap;
+//             }else
+//             console.log((`${hesap.hesapNo}
+//              nolu hesabınızda ${miktar} yoktur`));
+//         }
+//         else{
+//             console.log('bakiye yetersiz');
+//         }
+//     }
+// }
+
+// paraCek(hesapA,2000);
+// paraCek(hesapA,500);
+// // paraCek(hesapB,2000);
+
+
+// DERS 27 WINDOW OBJECT
+// let val;
+// // val = window;
+// var a =10;
+// function abc(){
+//     return 0; 
+// };
+
+//alert
+//alert('--merhaba--')
+
+//prompt
+// var b = prompt('bir sayi giriniz');
+// console.log(b);
+
+//confirm
+// val = confirm('emin misiniz? ');
+// true false döner.
+// if(val){
+//     console.log('ok');
+// }else{
+//     console.log('no');
+// }
+
+
+//scroll
+// val = window.scrollX;
+// val = window.scrollY;
+// val = scrollX;
+
+//location
+// val = window.location;
+// val = window.location.href;
+// val = window.location.hostname;
+// val = window.location.host;
+// val = window.location.protocol;
+// val = window.location.search;
+
+//window.location.href = '';
+//window.location.reload;
+//window.navigator; // tarayıcı bilgileri
+
+//window.document // sayfanın html çıktısını alır
+// document.getElementById('header');
+
+
+// console.log(val);
+
+// DERS 28 SCOPES
+
+//yazdığımız değişkenin hangi kod bloğu tarafından
+//görülüp görülemeyeceği.
+
+// ** GLOBAL SCOPE
+var name = 'CanBaran';
+var age =25;
+
+function logName(){
+    var name='Ada';
+    var age= 19;
+
+    console.log('funasdadsac içi '+name);
+}
+if(true){
+    var age =30;
+    console.log('block scope '+name+age);
+}
+
+console.log(age);
+logName();
+console.log(name);
+// console.log(age);
+
+// ** LOCAL SCOPE
+
+// fonksiyonlar kendi scopelarını oluşturur
+// blocklar yeni scope oluşturmaz
+//ES& ile gelen let ve const block scope oluşturu
+
+
+
+console.log("++++++++++++++++++++++++++++");
+
+if(true){
+    var model='Opel';
+    let year=2016;
+    const color = 'white';
+    console.log('block+scope ',name,age);
+}
+
+console.log(model);// yazar
+//  year ve color hata verir.
+// console.log('block scope',model,year,color);
+
+var a =1;
+for(let i=0; i<10 ; i++){ //let olmalıdır
+    console.log('i '+i);
+}
+console.log(i);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
