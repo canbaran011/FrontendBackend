@@ -1,19 +1,19 @@
-fontawesome:
+Fontawesome:
 
  <script src="https://kit.fontawesome.com/10f14f4be7.js" crossorigin="anonymous"></script>
 
-google opensans:
+Google opensans:
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 font-family: 'Open Sans',Arial ;
 
-google lato :
+Google lato :
 
 <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap" rel="stylesheet">
 font-family: 'Lato', ;
 
 
-google montserrat:
+Google montserrat:
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 font-family: 'Montserrat', ;
 
