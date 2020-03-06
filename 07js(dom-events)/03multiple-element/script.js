@@ -6,7 +6,7 @@
 
 // *** Multiple Elements
 
-let val;
+// let val;
 
 //grup olarak collection şeklinde alır.
 // val = document.getElementsByClassName('list-group-item');
@@ -27,15 +27,32 @@ let val;
 // }
 
 
-//document.getElementByTagName
-val = document.getElementsByTagName('li');
+// //document.getElementByTagName
+// val = document.getElementsByTagName('li');
 
-// ul > task-list altındaki a etiketlerini almak 
-val = document.getElementById('task-list');
-val = document.getElementsByTagName('a');
+// // ul > task-list altındaki a etiketlerini almak 
+// val = document.getElementById('task-list');
+// val = val.getElementsByTagName('a');
+
+// // OR 
+// val = document.getElementById('task-list')
+// .getElementsByTagName('a');
 
 
+//nodelist var ve içinde for each
+// val = document.querySelectorAll('li'); 
+
+// val.forEach(function(item,index){
+//   var a = item.textContent= `${index} - hello`;
+    
+//     console.log(a);
+// });
+
+// val = document.querySelectorAll('li:nth-child(odd)');
+
+// val.forEach(function(item){
+//     item.style.background='#ccc';
+// });
 
 
-
-console.log(val);
+// console.log(val);
