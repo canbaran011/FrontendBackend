@@ -17,6 +17,8 @@ Google montserrat:
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 font-family: 'Montserrat', ;
 
+ClearFix css
+
 .clearfix::after{
     content:"";
     display:block;
@@ -32,3 +34,22 @@ JQUERY CDN :
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   ></script>
+
+***PRIMITIVE TYPES
+NUMBERS
+STRINGS
+BOOLEANS
+UNDEFINED
+NULL
+
+***REFERENCE TYPES
+ARRAYS
+FUNCTIONS
+OBJECTS
+DATES
+STRING & NUMBER OBJECT
+
+
+
+
+
