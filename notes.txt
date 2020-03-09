@@ -1,6 +1,6 @@
 Fontawesome:
 
- <script src="https://kit.fontawesome.com/10f14f4be7.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/10f14f4be7.js" crossorigin="anonymous"></script>
 
 Google opensans:
 
@@ -12,6 +12,10 @@ Google lato :
 <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap" rel="stylesheet">
 font-family: 'Lato', ;
 
+Google Oxanium
+
+<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
+font-family: 'Oxanium', cursive;
 
 Google montserrat:
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
