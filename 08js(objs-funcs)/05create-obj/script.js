@@ -17,45 +17,15 @@ let ron = Object.create(personProto,{
   job: {value: 'teacher'}
 });
 
-console.log(ron);
+console.log(ron); // shows on browser
+console.log(ron.job);
 console.log(ron.calculateAge());
+
+console.log('-----------------');
 
 console.log(personProto);
 console.log(can);
 console.log(can.calculateAge());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

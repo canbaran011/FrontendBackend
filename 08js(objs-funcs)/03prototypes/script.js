@@ -25,6 +25,7 @@ console.log('***********************************');
 console.log(ron.calculateAge());
 console.log(ron);
 
+//önemli !
 //proto persona(can,ron) ait olmayanlar //inherited parça
 console.log(ron.hasOwnProperty('name'));
 console.log(ron.hasOwnProperty('lastName'));
