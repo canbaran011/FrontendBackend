@@ -1,6 +1,4 @@
-
 // this keyword
-
 
 //ES5
 // let list = {
@@ -22,12 +20,11 @@
 // this.names.map((name)=>{
 //   console.log(`${this.category} ${name}`);
 // })
-  
+
 //     }
 //   }
 
 // list.call();
-
 
 //ES 5
 // function Game(){
@@ -43,54 +40,17 @@
 // let player = new Game();
 // player.addLive();
 
-
 // ES 6
 
-function Game(){
+function Game() {
   this.live = 0;
-  this.addLive = function(){
+  this.addLive = function() {
     var self = this;
-    this.OneUp = setInterval(()=>{
+    this.OneUp = setInterval(() => {
       console.log(++self.live);
-    },1000)
-  }
+    }, 1000);
+  };
 }
 
 let player = new Game();
 player.addLive();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

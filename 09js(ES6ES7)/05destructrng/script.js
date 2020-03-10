@@ -1,8 +1,5 @@
 // Destructring
 
-
-
-
 // Destructring Assignment ********************************************/
 
 // var a,b,rest;
@@ -28,7 +25,6 @@
 // console.log(b);
 // console.log(rest);
 
-
 // Array Destructring ********************************************/
 
 // const arrConfig = ['localhost','8080','900'];
@@ -49,10 +45,10 @@
 // Object Destructring ***********************************************/
 
 const objConfig = {
-  server : 'localhost',
-  port : '8080',
+  server: "localhost",
+  port: "8080",
   timeout: 900
-}
+};
 // var server = objConfig.server;
 // var port = objConfig.port;
 // var timeout = objConfig.timeout;
@@ -67,36 +63,7 @@ const objConfig = {
 // let {server,port,timeout=900} = objConfig; //varsayılan 900
 // console.log(server,port,timeout);
 
-const days = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-const [,,wed,,fri] = days; //öteleme işlemi
-console.log(wed,fri);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const [, , wed, , fri] = days; //öteleme işlemi
+console.log(wed, fri);
