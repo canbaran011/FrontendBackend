@@ -55,7 +55,7 @@ const ProductController = (function () {
 const UIController = (function () {
 
     const Selectors = {
-        productList: "#item-list",
+        productList: '#item-list',
         addButton: '.addBtn',
         productName: '#productName',
         productPrice: '#productPrice',
@@ -128,7 +128,7 @@ const App = (function (ProductCtrl, UICtrl) {
         // add product event
         document.querySelector(UISelectors.addButton).addEventListener('click', productAddSubmit);
 
-    }
+    } 
 
     const productAddSubmit = function (e) {
 
