@@ -826,7 +826,6 @@ sayısal ifade ile başlayamaz
 //     console.log('no id');
 // }
 
-
 //  DERS 18 SWITCH
 
 // let category = 'beyaz eşya';
@@ -866,7 +865,7 @@ sayısal ifade ile başlayamaz
 //   case 4:
 //     day = "Perşembe";
 //     break;
-    
+
 //   case 5:
 //     day = "Cuma";
 //     break;
@@ -927,7 +926,6 @@ sayısal ifade ile başlayamaz
 //     console.log('bilmiyorum');
 // }
 
-
 // // console.log(trafiktekiGun.toFixed());
 
 // var result = prompt('who is there?');
@@ -936,7 +934,7 @@ sayısal ifade ile başlayamaz
 //     console.log('cancelled');
 // }
 // else if(result == 'Admin'){
-   
+
 //     var password = prompt('enter your password');
 
 //         if(password == 'cancel'){
@@ -980,7 +978,6 @@ sayısal ifade ile başlayamaz
 // val = person.address.city;
 // val = person.getBirthYear();
 
-
 // let people = [
 //     {firsName: 'CanBaran',lastName:'Gündüz'},
 //     {firsName: 'Nurcemal',lastName:'Gündüz'},
@@ -998,9 +995,6 @@ sayısal ifade ile başlayamaz
 // console.log(typeof person);
 
 // DERS 21 OBJECT LIT UYGULAMA
-
-
-
 
 // var aracBilgileri =[
 //  {
@@ -1196,7 +1190,7 @@ sayısal ifade ile başlayamaz
 //     .servisKayitlari[0].detay[0]);
 
 // DERS 22 LOOPS
- 
+
 //loops
 
 // // for loops
@@ -1235,7 +1229,7 @@ sayısal ifade ile başlayamaz
 // let sonuc =0;
 
 // for(let i=10 ; i>0 ; i--){
-   
+
 //    if(i%2 == 0){
 //     sonuc += i;
 //    }
@@ -1271,7 +1265,6 @@ sayısal ifade ile başlayamaz
 // for(let i=0; i<cars.length ; i++){
 //     console.log(cars[i]);
 // }
-
 
 //For In
 // for(let i in cars){
@@ -1346,7 +1339,7 @@ aşağı yukarı ifadeleri ile buldurmaya çalışın.
 // console.log('right');
 // console.log(random);
 
-// DERS 25 FUNCTIONS 
+// DERS 25 FUNCTIONS
 // function yasHesapla(dogumYili){
 //     ;
 
@@ -1366,7 +1359,7 @@ aşağı yukarı ifadeleri ile buldurmaya çalışın.
 //     let emeklilik = 65 - yas ;
 
 //     if(emeklilik>0){
-//         console.log(`${isim} Emekli olmanıza 
+//         console.log(`${isim} Emekli olmanıza
 //         ${emeklilik} yıl kaldı.`);
 //     }else{
 //         console.log(`zaten emekli oldunuz:`+isim);
@@ -1421,13 +1414,12 @@ aşağı yukarı ifadeleri ile buldurmaya çalışın.
 // paraCek(hesapA,500);
 // // paraCek(hesapB,2000);
 
-
 // DERS 27 WINDOW OBJECT
 // let val;
 // // val = window;
 // var a =10;
 // function abc(){
-//     return 0; 
+//     return 0;
 // };
 
 //alert
@@ -1445,7 +1437,6 @@ aşağı yukarı ifadeleri ile buldurmaya çalışın.
 // }else{
 //     console.log('no');
 // }
-
 
 //scroll
 // val = window.scrollX;
@@ -1467,7 +1458,6 @@ aşağı yukarı ifadeleri ile buldurmaya çalışın.
 //window.document // sayfanın html çıktısını alır
 // document.getElementById('header');
 
-
 // console.log(val);
 
 // DERS 28 SCOPES
@@ -1476,18 +1466,18 @@ aşağı yukarı ifadeleri ile buldurmaya çalışın.
 //görülüp görülemeyeceği.
 
 // ** GLOBAL SCOPE
-var name = 'CanBaran';
-var age =25;
+var name = "CanBaran";
+var age = 25;
 
-function logName(){
-    var name='Ada';
-    var age= 19;
+function logName() {
+  var name = "Ada";
+  var age = 19;
 
-    console.log('funasdadsac içi '+name);
+  console.log("funasdadsac içi " + name);
 }
-if(true){
-    var age =30;
-    console.log('block scope '+name+age);
+if (true) {
+  var age = 30;
+  console.log("block scope " + name + age);
 }
 
 console.log(age);
@@ -1501,290 +1491,22 @@ console.log(name);
 // blocklar yeni scope oluşturmaz
 //ES& ile gelen let ve const block scope oluşturu
 
-
-
 console.log("++++++++++++++++++++++++++++");
 
-if(true){
-    var model='Opel';
-    let year=2016;
-    const color = 'white';
-    console.log('block+scope ',name,age);
+if (true) {
+  var model = "Opel";
+  let year = 2016;
+  const color = "white";
+  console.log("block+scope ", name, age);
 }
 
-console.log(model);// yazar
+console.log(model); // yazar
 //  year ve color hata verir.
 // console.log('block scope',model,year,color);
 
-var a =1;
-for(let i=0; i<10 ; i++){ //let olmalıdır
-    console.log('i '+i);
+var a = 1;
+for (let i = 0; i < 10; i++) {
+  //let olmalıdır
+  console.log("i " + i);
 }
 console.log(i);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

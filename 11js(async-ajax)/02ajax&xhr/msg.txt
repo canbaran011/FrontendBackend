@@ -1,0 +1,3 @@
+/***************
+Hello , This is  XHR Obj. which is in msg.txt
+***************/

@@ -1,0 +1,29 @@
+
+
+[
+    {
+        "firstName":"CanBaran",
+        "lastName" :"Gündüz",
+        "age": 24,
+        "retired":false
+    },
+    {
+        "firstName":"Nurcemal",
+        "lastName" :"Gündüz",
+        "age": 26,
+        "retired":false
+    },
+    {
+        "firstName":"Uygar",
+        "lastName" :"Gündüz",
+        "age": 30,
+        "retired":false
+    },
+    {
+        "firstName":"Fadime",
+        "lastName" :"Gündüz",
+        "age": 53,
+        "retired":false
+    }
+]
+
