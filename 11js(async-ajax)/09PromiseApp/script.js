@@ -47,29 +47,20 @@ if(isMomHappy){
 });
 
 const showToFriends = function(phone){
-  const message = "hey friends this is my new phone" 
+  const message = "hey friends this is my new phone "+ 
   phone.name ;
   return Promise.resolve(message);
 }
 
 const askMom = function(){
 willGetNewPhone
-.then(data=>
-  {
-    console.log(data);
-  })
-  .catch(error=>{
+.then(showToFriends)
+.then(message=>console.log(message))
+.catch(error=>{
     console.log(error);
-  })
-
+  }) 
 }
 askMom();
-
-
-
-
-
-
 
 
 
