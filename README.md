@@ -1,8 +1,9 @@
 # FrontendBackend
 Frontend &amp; Backend Works
 ============================
-This is my Frontend and Backend efforts to learn  React , NodeJS
--------------------------------------------------
+( Html , Css , Bootstrap )
+( JS , React , NodeJS )
+
 * html 
 * css  
 * js 
