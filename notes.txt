@@ -1,4 +1,5 @@
 API :
+*may not work properly
 jsonplaceholder.typicode.com
 
 Bootstrap:
