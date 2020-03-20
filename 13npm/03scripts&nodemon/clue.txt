@@ -1,0 +1,13 @@
+package.json içindeki scripts altına
+"start" : "node app.js", ekleyip ardından terminalde
+npm start dediğimizde node app.js çalışır
+
+
+scripts altına eğer ;
+"start-server" : "node app.js" şeklinde tekrar eklersek
+npm run start-server dememiz gerekli.
+
+***************************************************
+
+nodemon paketi sürekli npm start yazmaktan bizi kurtarır 
+live bir şekilde yayınlar değişiklikleri
