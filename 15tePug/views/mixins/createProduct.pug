@@ -1,0 +1,14 @@
+mixin createProduct(product)
+        .col-md-4
+              .card.my-3
+                img.card-img-top(src=`../img/${product.image}`)
+                .card-body
+                  h5.card-title
+                    a(href='#') #{product.name}
+                  p.card-text.pt-2
+                    | #{product.description}
+                .card-footer
+                  small.text-muted
+                    i.fa.fa-try
+                    |                                     #{product.price}
+                  a.btn.btn-secondary.btn-sm.float-right(href='') details
