@@ -2,9 +2,6 @@
 // 1) Global variable naming conflicts
 // //Script.js
 // var name = 'Can';
-
-
-
 // //App.js
 // var name = 'Baran';
 
@@ -86,7 +83,6 @@ var Module = (function(){
 
 })();
 Module.privateMethod();
-
 
 
 
