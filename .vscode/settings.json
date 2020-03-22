@@ -1,5 +1,20 @@
+
 {
-    "editor.wordWrap": "on"
-  
+    "editor.wordWrap": "on",
+    "files.autoSave": "afterDelay",
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.mode": "manual",
+    "workbench.colorCustomizations":
+ {
+    "editor.cursorStyle":"line",
+    "editorCursor.foreground": "#ff0000"   
+},
+"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+"workbench.enableExperiments": false,
+"telemetry.enableTelemetry": false,
+"telemetry.enableCrashReporter": false
+
 }
-//wordwrap for fit the codes on screen size
+   
+
+
