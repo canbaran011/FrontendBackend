@@ -1,6 +1,5 @@
 
 {
-    // something gone wrong
     "editor.wordWrap": "on",
     "files.autoSave": "afterDelay",
     "update.enableWindowsBackgroundUpdates": false,
