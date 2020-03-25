@@ -1,24 +1,24 @@
 
 
-document.querySelector('#getOne').addEventListener('click',getOne);
+document.querySelector('#getOne').addEventListener('click', getOne);
 
-document.querySelector('#getAll').addEventListener('click',getAll);
+document.querySelector('#getAll').addEventListener('click', getAll);
 
-function getOne(){
+function getOne() {
     var id = document.querySelector('#postid').value;
-    var url = "https://jsonplaceholder.typicode.com/posts/"+id;
+    var url = "https://jsonplaceholder.typicode.com/posts/" + id;
     var xhr = new XMLHttpRequest();
 
-    xhr.open('GET',url,true);
+    xhr.open('GET', url, true);
 
-    xhr.onload = function(){
+    xhr.onload = function () {
 
-        if(this.status == 200 ){
+        if (this.status == 200) {
             // console.log(this.responseText);
             var post = JSON.parse(this.responseText);
-            var html ="";
-            
-                html +=`
+            var html = "";
+
+            html += `
                     
                 <div class="card m-4 result" style="width: 20rem;">
                 <div class="card-header">
@@ -31,9 +31,9 @@ function getOne(){
                 </div>
                 </div>
                     `;
-       
 
-            document.querySelector('#results').innerHTML=html;
+
+            document.querySelector('#results').innerHTML = html;
         }
 
 
@@ -45,21 +45,23 @@ function getOne(){
 }
 
 
-function getAll(){
+function getAll() {
     var url = "https://jsonplaceholder.typicode.com/posts";
     var xhr = new XMLHttpRequest();
 
-    xhr.open('GET',url,true);
+    xhr.open('GET', url, true);
 
-    xhr.onload = function(){
+    xhr.onload = function () {
 
-        if(this.status == 200 ){
-            // console.log(this.responseText);
-            var posts = JSON.parse(this.responseText);
-            var html ="";
+        if (this.status == 200) {
+
+            console.log(this.responseText);
             
+            var posts = JSON.parse(this.responseText);
+            var html = "";
+
             posts.forEach(post => {
-                html +=`
+                html += `
                     
                 <div class="card m-4 result" style="width: 20rem;">
                 <div class="card-header">
@@ -74,56 +76,13 @@ function getAll(){
                     `;
             });
 
-            document.querySelector('#results').innerHTML=html;
+            document.querySelector('#results').innerHTML = html;
         }
-
-
     }
 
     xhr.send();
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -41,7 +41,7 @@ console.log(users);
        var html="";
        users.forEach(user => {
            html+= `<div>
-           <ul class="list-group">
+           <ul class="list-group m-2">
   <li class="list-group-item active">${user.title}</li>
   <li class="list-group-item"> ${user.woeid}</li>
   <li class="list-group-item"> ${user.latt_long}</li>

@@ -8,7 +8,7 @@ document.querySelector("#postData").addEventListener("click", postData);
 
 function getOne() {
   var id = document.querySelector("#postid").value;
-  var url = "https://jsonplaceholder.typicode.com/posts/" + id;
+  var url = "https://jsonplaceholder.typicode.com/posts/"+id;
   var xhr = new XMLHttpRequest();
 
   xhr.open("GET", url, true);
