@@ -91,7 +91,19 @@ OBJECTS
 DATES
 STRING & NUMBER OBJECT
 
+/********************************************************/
+some k.shortcuts for remind
+clg = console.log(object);
+selection then+ tab =to right sliding
+selection then+ tab+shift =to left shifting
+shift + arrows = selection freely
+ctrl + shift + alt = vertical writing same or editing
+ctrl + . = maybe solution
+ctrl + shift + P = for pug beautify
+ctrl + L = selects all line 
 
-
-
-
+after nodejs part :
+you should install node modules in terminal like=
+npm install
+and you can run the project on local host like=
+npm start
