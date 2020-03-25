@@ -1,12 +1,17 @@
 mixin createProduct(product)
-        .col-md-4
-              .card.my-3
-                img.card-img-top(src=`../img/${product.imageUrl}`)
-                .card-body
-                  h5.card-title
+    .col-md-4
+        .card.mb-2
+            img(src=`/img/${product.imageUrl}` alt=`${product.description}`).card-img-top
+            .card-body
+                h4.card-title
                     a(href=`/products/${product.id}`) #{product.name}
-                  small.text-muted
-                    i.fa.fa-try #{product.price}                
-                .card-footer.text-center
-                  a.btn.btn-outline-danger.btn-sm(href=`/products/${product.id}`) Details             
-                  a.btn.btn-outline-danger.btn-sm.ml-3(href='#') Add to Cart
+                                
+                small.text-muted
+                    i.fas.fa-lira-sign #{product.price}
+                            
+            .card-footer.text-center                
+
+                a(href=`/products/${product.id}`).btn.btn-outline-primary.btn-sm Details 
+
+                a(href="#").btn.btn-outline-primary.btn-sm.ml-3 Add to Cart 
+                     

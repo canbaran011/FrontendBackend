@@ -1,84 +1,66 @@
-
 const Product = require('../models/product');
+const Category = require('../models/category');
 
-
-module.exports.getProducts = (req, res, next) => {
-  const products = Product.getAll();
-  res.render("admin/products", {
-    title: "Admin Products",
-    products: products,
-    path: '/admin/products',
-    action: req.query.action
-  });
-}
-
-
-module.exports.getAddProduct = (req, res, next) => {
-
-  res.render('admin/add-product',
-    {
-      title: 'New Product',
-
-      path: '/admin/add-product'
+exports.getProducts = (req, res, next) => {
+    const products = Product.getAll();
+    res.render('admin/products', {
+        title: 'Admin Products',
+        products: products,
+        path: '/admin/products',
+        action: req.query.action
     });
 }
 
-module.exports.postAddProduct = (req, res, next) => {
-  //database e kayıt
-
-  const product = new Product(
-    req.body.name,
-    req.body.price,
-    req.body.imageUrl,
-    req.body.description
-  );
-
-  product.saveProduct();
-
-  console.log(req.body);
-  res.redirect("/");
-}
-
-module.exports.getEditProduct = (req, res, next) => {
-
-  const product = Product.getById(req.params.productid);
-
-  res.render('admin/edit-product',
-    {
-      title: 'Edit Product',
-      path: '/admin/products',
-      product: product
+exports.getAddProduct = (req, res, next) => {
+    const categories = Category.getAll();
+    res.render('admin/add-product', {
+        title: 'New Product',
+        path: '/admin/add-product',
+        categories: categories
     });
 }
 
-module.exports.postEditProduct = (req, res, next) => {
+exports.postAddProduct = (req, res, next) => {
+    const product = new Product();
 
-  const product = Product.getById(req.body.id);
+    product.name = req.body.name;
+    product.price = req.body.price;
+    product.imageUrl = req.body.imageUrl;
+    product.categoryid = req.body.categoryid;
+    product.description = req.body.description;
 
-  
-  product.name = req.body.name;
-  product.price = req.body.price;
-  product.imageUrl = req.body.imageUrl;
-  product.description = req.body.description;
-
-  Product.Update(product);
-  // '/admin/products?action=edit&id='+product.id
-  res.redirect("/admin/products?action=edit");
+    product.saveProduct();
+    res.redirect('/');
 }
 
-module.exports.postDeleteProduct = (req, res, next) => {
+exports.getEditProduct = (req, res, next) => {
 
-  Product.DeleteById(req.body.productid);
+    const product = Product.getById(req.params.productid);
+    const categories = Category.getAll();
 
-  // '/admin/products?action=edit&id='+product.id
-  res.redirect("/admin/products?action=delete");
+    res.render('admin/edit-product', {
+        title: 'Edit Product',
+        path: '/admin/products',
+        product: product,
+        categories: categories
+    });
 }
 
+exports.postEditProduct = (req, res, next) => {
 
-// const products = [
-//     {name:'samsung s8',price:3000,image:'1.jpg',description:'iyi telefonlardan'},
-//     {name:'samsung s7',price:2500,image:'2.jpg',description:'rh telefonlardan'},
-//     {name:'samsung s6',price:2400,image:'3.jpg',description:'sef telefonlardan'}
+    const product = Product.getById(req.body.id);
 
-//   ];
+    product.name = req.body.name;
+    product.price = req.body.price;
+    product.imageUrl = req.body.imageUrl;
+    product.description = req.body.description;
+    product.categoryid = req.body.categoryid;
 
+    Product.Update(product);
+    res.redirect('/admin/products?action=edit');
+}
+
+exports.postDeleteProduct = (req, res, next) => {
+    Product.DeleteById(req.body.productid);
+    res.redirect('/admin/products?action=delete');
+}
