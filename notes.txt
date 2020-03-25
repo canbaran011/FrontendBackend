@@ -93,6 +93,7 @@ STRING & NUMBER OBJECT
 
 /********************************************************/
 some k.shortcuts for remind
+p.s: some of them might be related with extensions
 clg = console.log(object);
 selection then+ tab =to right sliding
 selection then+ tab+shift =to left shifting
@@ -107,3 +108,16 @@ you should install node modules in terminal like=
 npm install
 and you can run the project on local host like=
 npm start
+
+installed extensions:
+*beautify
+*js ES& code snippets
+*live server
+*minify
+*prettier
+*vs intellicode
+*vs-code icons
+*code runner
+*css peek
+*debugger for chrome
+*ıntellisense for css
