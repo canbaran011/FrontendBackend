@@ -100,8 +100,12 @@ selection then+ tab+shift =to left shifting
 shift + arrows = selection freely
 ctrl + shift + alt = vertical writing same or editing
 ctrl + . = maybe solution
-ctrl + shift + P = for pug beautify
+ctrl + shift + P =(show all commands) for pug beautify
 ctrl + L = selects all line 
+ctrl -P = Go to file
+ctrl + shift + f = find in files
+F5 = start debugging
+ctrl + " = terminal
 
 after nodejs part :
 you should install node modules in terminal like=
