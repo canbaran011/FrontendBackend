@@ -92,7 +92,7 @@ DATES
 STRING & NUMBER OBJECT
 
 /********************************************************/
-some k.shortcuts for remind
+SOME KEYBOARD SHORTCUTS WHICH IS VERY USEFUL ..
 p.s: some of them might be related with extensions
 clg = console.log(object);
 selection then+ tab =to right sliding
@@ -101,8 +101,9 @@ shift + arrows = selection freely
 ctrl + shift + alt = vertical writing same or editing
 ctrl + . = maybe solution
 ctrl + shift + P =(show all commands) for pug beautify
-ctrl + L = selects all line 
-ctrl -P = Go to file
+ctrl + L = selects current line 
+ctrl + ö = comment selected
+ctrl - P = Go to file
 ctrl + shift + f = find in files
 F5 = start debugging
 ctrl + " = terminal
@@ -111,17 +112,17 @@ after nodejs part :
 you should install node modules in terminal like=
 npm install
 and you can run the project on local host like=
-npm start
+npm start (that means start script in package.json nodemon start app.js)
 
 installed extensions:
-*beautify
-*js ES& code snippets
-*live server
+*beautify // good
+*js ES& code snippets //recommended
+*live server // very useful
 *minify
-*prettier
-*vs intellicode
-*vs-code icons
-*code runner
-*css peek
-*debugger for chrome
-*ıntellisense for css
+*prettier // good 
+*vs intellicode 
+*vs-code icons // no need
+*code runner // runs without browser obj.
+*css peek // no need write it down
+*debugger for chrome // did not tried
+*ıntellisense for css //tricky dont use it
