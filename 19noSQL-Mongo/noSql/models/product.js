@@ -79,6 +79,19 @@ class Product{
                     console.log(err);
                 })
     }
+    static findByCategoryId(categoryid){
+        const db = getDb();
+        return db.collection('products')
+        .find({categories : categoryid})
+        .toArray()
+        .then(products => {
+            return products;
+        })
+        .catch(err => {
+
+        })
+
+    }
 
 }
 

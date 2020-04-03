@@ -7,10 +7,9 @@ const mongoConnect = (callback)=>{
     // MongoClient.connect('mongodb://localhost/node-app')
     MongoClient.connect('mongodb+srv://canbaran011:HWv3cg77CFqPz5kI@cluster0-neqnf.mongodb.net/node-app?retryWrites=true&w=majority')
     .then(client=>{
-       
-        console.log('connected');
+        console.log('CONNECTED TO MONGODB');
         _db = client.db();
-        callback(client);
+        callback();
     })
     .catch(err => {
         console.log(err);

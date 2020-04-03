@@ -2,7 +2,6 @@ const Product = require('../models/product');
 const Category = require('../models/category');
 
 exports.getProducts = (req, res, next) => {
-    
     Product.findAll()
     .then(products => {
         res.render('admin/products', {
@@ -29,7 +28,6 @@ exports.getAddProduct = (req, res, next) => {
 }
 
 exports.postAddProduct = (req, res, next) => {
-    // const product = new Product();
 
     const name = req.body.name;
     const price = req.body.price;
