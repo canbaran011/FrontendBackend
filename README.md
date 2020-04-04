@@ -4,10 +4,14 @@ Frontend &amp; Backend Works
 ( Html , Css , Bootstrap )
 ( JS , React , NodeJS )
 
-* html 
-* css  
+* html5 
+* css3  
 * js 
 * react
-* node
-* db
-* etc.
+* nodejs
+* db (mysql , mongodb)
+* etc:
+* testing
+* architectures
+* structures
+* algorithms
