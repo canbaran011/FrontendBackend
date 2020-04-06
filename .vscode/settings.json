@@ -12,7 +12,8 @@
 "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
 "workbench.enableExperiments": false,
 "telemetry.enableTelemetry": false,
-"telemetry.enableCrashReporter": false
+"telemetry.enableCrashReporter": false,
+"git.ignoreLimitWarning": true
 
 }
    
