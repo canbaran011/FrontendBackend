@@ -2,8 +2,7 @@ const Product = require('../models/product');
 const Category = require('../models/category');
 
 exports.getProducts = (req, res, next) => {
-    Product
-        .find({ userId: req.user._id })
+    Product.find({ userId : req.user._id}) //userId: req.user._id
         .populate('userId', 'name -_id')
         .select('name price imageUrl userId')
         .then(products => {
