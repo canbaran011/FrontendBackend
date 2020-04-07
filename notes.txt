@@ -107,6 +107,7 @@ ctrl - P = Go to file
 ctrl + shift + f = find in files
 F5 = start debugging
 ctrl + " = terminal
+ctrl + shift + L = selecting same words
 
 after nodejs part :
 you should install node modules in terminal like=
@@ -128,7 +129,7 @@ installed extensions:
 *ıntellisense for css //tricky dont use it
 
 ///////////////////////////////////////
-
+// template ((use))
 // using Twilio SendGrid's v3 Node.js Library
 // https://github.com/sendgrid/sendgrid-nodejs
 const sgMail = require('@sendgrid/mail');
@@ -141,3 +142,14 @@ const msg = {
   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
 };
 sgMail.send(msg);
+
+///////////////////////////////////////
+
++React , Vue etc.
++Unit testing
++Css Grid & Flex
++JS deep {RegExp}
++Charity ' project
++apply using sass
++Figma or Equal Design 
++MockUps Sliders Photos
