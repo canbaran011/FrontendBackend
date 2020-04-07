@@ -14,11 +14,11 @@ router.get('/products/:productid',csrf, shopController.getProduct);
 
 router.get('/categories/:categoryid', csrf,shopController.getProductsByCategoryId);
 
-router.get('/cart',csrf,isAuthenticated, shopController.getCart);
+router.get('/cart', csrf,isAuthenticated,  shopController.getCart);
 
-router.post('/cart',csrf,isAuthenticated, shopController.postCart);
+router.post('/cart', csrf, isAuthenticated, shopController.postCart);
 
-router.post('/delete-cartitem',csrf,isAuthenticated, shopController.postCartItemDelete);
+router.post('/delete-cartitem',csrf ,isAuthenticated, shopController.postCartItemDelete);
 
 router.get('/orders',csrf,isAuthenticated, shopController.getOrders);
 

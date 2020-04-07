@@ -28,7 +28,6 @@ block content
 
                             form(action='/delete-cartitem' method='POST')
                                 input(type='hidden' name='productid' value=`${product.productId._id}`)
-                                input(type="hidden" name="_csrf" value=`${csrfToken}`)
                                 button(type='submit').btn.btn-danger.btn-sm Delete
             tfoot
                 td(colspan="4")
@@ -39,6 +38,7 @@ block content
         .text-center
             a(href="/").btn.btn-primary  Continue Shopping
             form(action="/create-order" method="POST")
+                input(type="hidden" name="_csrf" value=`${csrfToken}`)
                 button(type="submit").btn.btn-warning.ml-2 Order Products                      
     else
         h1 No Products                        

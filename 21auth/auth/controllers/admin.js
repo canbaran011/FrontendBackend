@@ -2,12 +2,11 @@ const Product = require('../models/product');
 const Category = require('../models/category');
 
 exports.getProducts = (req, res, next) => {
-    Product 
-        .find({userId : req.user_id}) 
+    Product
+        .find({ userId: req.user._id })
         .populate('userId', 'name -_id')
         .select('name price imageUrl userId')
         .then(products => {
-            console.log(products);
             res.render('admin/products', {
                 title: 'Admin Products',
                 products: products,
@@ -18,6 +17,8 @@ exports.getProducts = (req, res, next) => {
         .catch((err) => {
             console.log(err);
         });
+
+
 //.find({name: 'Iphone 6' , price: 2000 , }) .limit(10) .select({name:1 , price:1}) .sort({name:1})
 }
 
