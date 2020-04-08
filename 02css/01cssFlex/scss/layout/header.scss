@@ -1,0 +1,102 @@
+/******************* HEADER START*********************/
+.header {
+    background: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.438),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("../images/person.jpg") no-repeat top center;
+    height: 100vh;
+    width: 100%;
+  
+      &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px;
+  
+      &-menu ul li {
+        display: inline-block;
+      }
+      &-menu ul li a {
+        display: block;
+        color: #fff;
+        padding: 15px 10px;
+        text-align: center;
+        letter-spacing: 0.05rem;
+        transition: 300ms all;
+      }
+  
+      &-menu ul li a:hover {
+        color: $black-color;
+      }
+    }
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      &-heading {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          color: #fff;
+          text-align: center;
+          margin-top: 100px;
+        }
+        &-heading h1 {
+          font-size: 48px;
+          letter-spacing: 0.05;
+        }
+        
+        &-heading p {
+          letter-spacing: 0.05;
+          font-size: 16px;
+        }
+        
+        &-heading a {
+          display: block;
+          width: 150px;
+          height: 50px;
+          background: #fff;
+          text-align: center;
+          line-height: 50px;
+          color: black;
+          margin-top: 10px;
+          border-radius: 50px;
+          backface-visibility: hidden;
+          transition: 300ms all;
+          position: relative;
+        }
+        &-heading a:after {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          border-radius: 50px;
+          transition: 300ms all;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -2;
+        }
+        &-heading a:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.486);
+        }
+        &-heading a:active {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.486);
+        }
+        &-heading a:hover::after {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+        
+    }
+  
+  }
+  
+  
+  
