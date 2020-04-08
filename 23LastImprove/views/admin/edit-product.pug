@@ -22,14 +22,14 @@ block content
             label(for="imageUrl").col-sm-2.col-form-label Image
             .col-sm-10
                 img(src=`/img/${product.imageUrl}` width="100")
-                input#image(type="file" name="image")
+                input#image(type="file" name="image") 
 
         .form-group.row
             label(for="categoryid").col-sm-2.col-form-label Category
             .col-sm-10
-               each category in categories
-                input(type="checkbox" name="categoryids" value=`${category._id}` checked=category.selected)
-                | #{category.name} 
+                each category in categories
+                    input(type="checkbox" name="categoryids" value=`${category._id}` checked=category.selected)
+                    | #{category.name} 
 
         .form-group.row
             label(for="description").col-sm-2.col-form-label Description
@@ -39,4 +39,4 @@ block content
         .form-group.row
             .col-sm-10.offset-sm-2
                 input(type="submit" value="Save Product").btn.btn-primary   
-           
+

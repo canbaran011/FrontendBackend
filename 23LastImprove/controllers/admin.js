@@ -1,5 +1,8 @@
 const Product = require('../models/product');
 const Category = require('../models/category');
+const mongoose = require('mongoose');
+const fs = require('fs');
+
 
 exports.getProducts = (req, res, next) => {
     Product.find({ userId : req.user._id}) //userId: req.user._id
@@ -27,7 +30,7 @@ exports.getAddProduct = (req, res, next) => {
         title: 'New Product',
         path: '/admin/add-product'
         // categories: categories
-    });
+    }); 
 
 }
 
@@ -35,16 +38,28 @@ exports.postAddProduct = (req, res, next) => {
 
     const name = req.body.name;
     const price = req.body.price;
-    const file = req.file;
+    const image = req.file;
     const description = req.body.description;
 
-    console.log(file);
+   
+
+    if(!image){
+        return res.render('admin/add-product',{
+            title: 'New Product',
+            path: '/admin/add-product',
+            inputs: {
+                name:name,
+                price: price,
+                description: description
+            }
+        })
+    }
 
     const product = new Product(
         {
             name: name,
             price: price,
-            imageUrl: file.filename,
+            imageUrl: image.filename,
             description: description,
             userId: req.user
         }
@@ -123,76 +138,65 @@ exports.postEditProduct = (req, res, next) => {
     const ids = req.body.categoryids; 
 
     // update first id seçmeden direkt update sorgusunu yolla database e
-    const product = {
-        name: name,
-        price: price,
-        description: description,
-        categories : ids
-    };
 
-    if(image){
-        product.imageUrl = image.filename;
-    }
+    Product.findOne({ _id: id, userId: req.user._id })
+            .then(product => {
+                if(!product){
+                    return res.redirect('/');
+                }
+                product.name = name;
+                product.price= price;
+                product.description =description;
+                product.categories =ids;
 
-    Product.updateOne({ _id: id, userId:req.user._id }, //deprecated use updateOne
-        {
-            $set: product
-        })
-        .then(() => {
-            res.redirect('/admin/products?action=edit');
-        })
-        .catch(err => {
-            console.log(err);
-        })
+                if(image){
+                    //resmi sil
+                    fs.unlink('public/img/'+product.imageUrl,err => {
+                        if(err){
+                            console.log(err);
 
+                        }
+                    })
+                    product.imageUrl= image.filename;
+                }
+                return product.save();
+            })
+            .then(result => {
+                res.redirect('/admin/products?action=edit');
 
-    // query first önce id seç sonra onu update et
-    /*  Product.findById(id)
-              .then(product =>{
-                  product.name = name;
-                  product.price = price;
-                  product.imageUrl = imageUrl;
-                  product.description = description;
-                 return product.save();
-              })
-              .then( () => {
-                  res.redirect('/admin/products?action=edit');
-              })
-              .catch(err => {
-                  console.log(err);
-              })
-              */
+            })
+            .catch(err => {
+                next(err);
+            });
 
 }
 
 exports.postDeleteProduct = (req, res, next) => {
     const id = req.body.productid;
 
-    // fiyatı 2000 olan hepsini silmek için .deleteMany({price : 2000})
-    Product.deleteOne({ _id: id , userId: req.user._id}) //findByIdAndRemove(id)
-        .then((result) => {
-            if(result.deletedCount === 0){
-                return res.redirect('/')
-            }
+    Product.findOne({ _id: id, userId: req.user._id } )
+            .then(product => {
+                if(!product){
+                    return res.redirect('/');
+                    //return next(new Error('silinmek istenen yok'))
+                }
+                fs.unlink('public/img/'+product.imageUrl,err => {
+                    if(err){
+                        console.log(err);
 
-            // console.log(result);
-            // console.log('product has been deleted');
-            res.redirect('/admin/products?action=delete');
+                    }
+                });
 
-        })
-        .catch(err => {
-            console.log(err);
-        });
-
-
-    /*
-     Product.destroy({
-         where: {id : id}
-     }).then(()=> {
-         res.redirect('/admin/products?action=delete');
-     }).catch(err => {
-         console.log(err);
-     });*/
+                return Product.deleteOne({ _id: id, userId: req.user._id } )
+            }).then((result) => {
+                if(result.deletedCount === 0){
+                    return res.redirect('/');
+                }
+                res.redirect('/admin/products?action=delete');
+            })
+            .catch(err => {
+                next(err);
+            }); 
 
 }
 
@@ -307,3 +311,13 @@ exports.postDeleteCategory = (req,res,next) => {
 // .catch(err => {
 //     console.log(err);
 // });
+
+
+    /*
+     Product.destroy({
+         where: {id : id}
+     }).then(()=> {
+         res.redirect('/admin/products?action=delete');
+     }).catch(err => {
+         console.log(err);
+     });*/

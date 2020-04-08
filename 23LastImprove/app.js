@@ -24,7 +24,7 @@ const errorController= require('./controllers/errors');
 
 
 const User = require('./models/user');
-const ConnectionString = 'mongodb+srv://canbaran011:HWv3cg77CFqPz5kI@cluster0-neqnf.mongodb.net/node-app?retryWrites=true&w=majority';
+const ConnectionString = 'mongodb+srv://canbaran011:HWv3cg77CFqPz5kI@cluster0-neqnf.mongodb.net/node-app?retryWrites=true&w=majority';  
 
 var store = new mongoDbStore({
     uri: ConnectionString,
