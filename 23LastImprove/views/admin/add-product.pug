@@ -4,6 +4,7 @@ block styles
     link(rel="stylesheet" href="/css/forms.css")
 
 block content
+    h4 Add Product
     form(action="/admin/add-product" method="POST" enctype="multipart/form-data")
         input(type="hidden" name="_csrf" value=`${csrfToken}`)
         .form-group.row
@@ -32,9 +33,13 @@ block content
         .form-group.row
             label(for="description").col-sm-2.col-form-label Description
             .col-sm-10
-                textarea.form-control(name="description" cols="30" rows="10") 
-                
+                textarea.form-control(id="editor" name="description" cols="30" rows="10") 
+            
         .form-group.row
             .col-sm-10.offset-sm-2
                 input(type="submit" value="Save Product").btn.btn-primary   
+
+block script
+    script(src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js")
+    script(src="/js/script.js")                
            

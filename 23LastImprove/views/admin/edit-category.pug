@@ -4,6 +4,7 @@ block styles
     link(rel="stylesheet" href="/css/forms.css")
 
 block content
+    h4 Edit Category
     form(action="/admin/categories" method="POST")
         input(type="hidden" name="_csrf" value=`${csrfToken}`)
         input(type="hidden" name="id" value=`${category._id}`)

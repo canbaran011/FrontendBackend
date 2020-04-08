@@ -4,6 +4,7 @@ block styles
     link(rel="stylesheet" href="/css/forms.css")
 
 block content
+    h4 Add Category
     form(action="/admin/add-category" method="POST")
         input(type="hidden" name="_csrf" value=`${csrfToken}`)
         .form-group.row
