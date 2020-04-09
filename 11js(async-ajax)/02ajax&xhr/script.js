@@ -24,10 +24,6 @@ console.log('hello');
 
 
 
-
-
-
-
 /**
  *  readyState
  *  0 : request not initialized
