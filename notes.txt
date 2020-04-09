@@ -2,6 +2,16 @@ API :
 *may not work properly
 jsonplaceholder.typicode.com
 
+some websites maybe:
+w3layout
+css-tricks
+unsplash
+w3schools
+tutorialspoint
+codepen
+pexels
+
+
 Bootstrap:
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
