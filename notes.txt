@@ -153,3 +153,7 @@ sgMail.send(msg);
 +apply using sass
 +Figma or Equal Design 
 +MockUps Sliders Photos
+
+//////////////////////////////////////
+gulp auto prefixer?
+caniuse.com
