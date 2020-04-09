@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif; 
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  ul,
+  li,
+  ol {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+/*  CSS CODES */
+:root{
+    --gutter: 30px;
+    --m-bottom: 60px;
+}
+.container{
+    width: 100%;
+    max-width: 1140px;
+    margin : 0 auto;
+    min-height:100vh;
+}
+.row{
+    width:100%;
+    background-color: coral;
+    margin-bottom: var(--m-bottom);
+}
+.grid-1-of-12{
+    width: calc((100% - 11 * var(--gutter)) / 12);
+    padding: 20px;
+    background-color: darkorchid;
+    float:left;
+}
+.grid-1-of-12:not(:last-child){
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
