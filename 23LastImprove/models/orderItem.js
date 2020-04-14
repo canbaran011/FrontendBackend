@@ -1,3 +1,6 @@
+// we dont use it in mongoose part
+// sequel is a orm for mysql
+
 const Sequelize = require('sequelize');
 
 const sequelize =require('../utility/database');
