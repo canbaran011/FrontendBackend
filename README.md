@@ -10,7 +10,7 @@ Frontend &amp; Backend Works
 * react
 * nodejs +
 * db (mysql , mongodb) +
-* etc:
+* etc: redis,microservice
 * testing ?
 * architectures ?
 * structures
