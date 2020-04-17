@@ -154,16 +154,21 @@ const msg = {
 sgMail.send(msg);
 
 ///////////////////////////////////////
-
-+React , Vue etc.
-+Unit testing
-+Css Grid & Flex
-+JS deep {RegExp}
-+Charity ' project
-+apply using sass
-+Figma or Equal Design 
-+MockUps Sliders Photos
+//  NEXT THINGS TO LEARN 
++React - Redux, Thunk (with GAtsby) , Vue etc. +react learned 
++Unit testing                                  -will find a source
++Css Grid & Flex                               +done
++JS deep {RegExp}                              + 
++Charity ' project                             +started
++apply using sass                              +using currently
++Figma or Equal Design                         +made 1 2 things  
++MockUps Sliders Photos                        ? 
++NodeJS as Restful API              
++Socket IO 
++Redis
++RabbitMQ
++Microservices
 
 //////////////////////////////////////
-gulp auto prefixer?
-caniuse.com
+gulp auto prefixer? -would be good
+caniuse.com         -prefixer will solve 
