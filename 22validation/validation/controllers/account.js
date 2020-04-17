@@ -1,5 +1,4 @@
 const User = require('../models/user');
-const Login = require('../models/login');
 const bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
 const crypto = require('crypto');
@@ -24,50 +23,39 @@ exports.postLogin = (req , res, next) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    const loginModel = new Login({
-        email: email,
-        password: password
-    });
-    loginModel
-        .validate()
-        .then(
-        User.findOne({email:email})
-        .then( user => {
-            if(!user){
-                req.session.errorMessage = "bu mail ile kayıt yok  !";
-                req.session.save(function(err){
-                    console.log(err);
-                    return res.redirect('/login');
-                })
-            }
-            bcrypt.compare(password,user.password)
-            .then(isSuccess => {
-                if(isSuccess){
-                    //login
-                    req.session.user =user;
-                    req.session.isAuthenticated = true;
-                    return req.session.save(function(err){
-                        var url = req.session.redirectTo || '/';
-                        delete req.session.redirectTo;
-                        console.log(err);
-                        res.redirect(url);
-                    });
-    
-                }
-                res.redirect('/login');
-            })
-            .catch(err => {
+    User.findOne({email:email})
+    .then( user => {
+        if(!user){
+            req.session.errorMessage = "bu mail ile kayıt yok  !";
+            req.session.save(function(err){
                 console.log(err);
+                return res.redirect('/login');
             })
+        }
+        bcrypt.compare(password,user.password)
+        .then(isSuccess => {
+            if(isSuccess){
+                //login
+                req.session.user =user;
+                req.session.isAuthenticated = true;
+                return req.session.save(function(err){
+                    var url = req.session.redirectTo || '/';
+                    delete req.session.redirectTo;
+                    console.log(err);
+                    res.redirect(url);
+                });
+
+            }
+            res.redirect('/login');
         })
         .catch(err => {
             console.log(err);
         })
-    )
-        .catch(err => {
-            console.log(err);
-        });   
-    
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
 }
 
 

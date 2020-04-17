@@ -44,8 +44,7 @@ exports.postAddProduct = (req, res, next) => {
             price: price,
             imageUrl: imageUrl,
             description: description,
-            userId: req.user,
-            isActive:true
+            userId: req.user
         }
     );
     product.save()
@@ -54,7 +53,7 @@ exports.postAddProduct = (req, res, next) => {
             res.redirect('/admin/products');
         })
         .catch(err => {
-            console.log(err.message);
+            console.log(err);
         });
 
 
