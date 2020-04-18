@@ -4,17 +4,21 @@ block styles
     link(rel="stylesheet" href="/css/forms.css")
 
 block content
+
+    if errorMessage 
+        div.alert.alert-danger.col-sm-7 !{errorMessage}
+    h3 Add Product
     form(action="/admin/add-product" method="POST")
         input(type="hidden" name="_csrf" value=`${csrfToken}`)
         .form-group.row
             label(for="name").col-sm-2.col-form-label Product Name
             .col-sm-10
-                input.form-control#name(type="text" name="name")  
+                input.form-control#name(type="text" name="name" )  
 
         .form-group.row
             label(for="price").col-sm-2.col-form-label Price
             .col-sm-10
-                input.form-control#price(type="text" name="price") 
+                input.form-control#price(type="text" name="price" ) 
 
         .form-group.row
             label(for="imageUrl").col-sm-2.col-form-label Image
@@ -33,8 +37,8 @@ block content
             label(for="description").col-sm-2.col-form-label Description
             .col-sm-10
                 textarea.form-control(name="description" cols="30" rows="10") 
-                
+
         .form-group.row
             .col-sm-10.offset-sm-2
                 input(type="submit" value="Save Product").btn.btn-primary   
-           
+

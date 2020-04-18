@@ -2,7 +2,7 @@ const Product = require('../models/product');
 const Category = require('../models/category');
 
 exports.getProducts = (req, res, next) => {
-    Product.find({ userId : req.user._id}) //userId: req.user._id
+    Product.find({ userId: req.user._id }) //userId: req.user._id
         .populate('userId', 'name -_id')
         .select('name price imageUrl userId')
         .then(products => {
@@ -15,10 +15,11 @@ exports.getProducts = (req, res, next) => {
         })
         .catch((err) => {
             console.log(err);
+            next(err);
         });
 
 
-//.find({name: 'Iphone 6' , price: 2000 , }) .limit(10) .select({name:1 , price:1}) .sort({name:1})
+    //.find({name: 'Iphone 6' , price: 2000 , }) .limit(10) .select({name:1 , price:1}) .sort({name:1})
 }
 
 exports.getAddProduct = (req, res, next) => {
@@ -44,7 +45,9 @@ exports.postAddProduct = (req, res, next) => {
             price: price,
             imageUrl: imageUrl,
             description: description,
-            userId: req.user
+            userId: req.user,
+            isActive: false,
+            tags: ["akıllı telefon"]
         }
     );
     product.save()
@@ -53,7 +56,36 @@ exports.postAddProduct = (req, res, next) => {
             res.redirect('/admin/products');
         })
         .catch(err => {
-            console.log(err);
+
+            if (err.name == 'ValidationError') {
+                let message = '';
+                for (field in err.errors) {
+                    message += err.errors[field].message + '<br>';
+                }
+                res.render('admin/add-product', {
+                    title: 'New Product',
+                    path: '/admin/add-product',
+                    errorMessage: message,
+                    // categories: categories
+                    inputs: {
+                        name: name,
+                        price: price,
+                        description: description
+                    }
+
+                });
+            } else {
+                // error Message  ..
+                // redirect 
+                // status code 500 page
+                //  res.redirect('/500'); // ÖNEMLİ ! IMPORTANT
+                // catchlere bu redirect i yazabiliriz...
+                next(err); // süreci durdurmadan burada karşılayıp middleware ile yapılabilir.
+                // hata aldığınfa url değişmedi böylece. 
+            }
+
+
+            // console.log(err.message);
         });
 
 
@@ -61,44 +93,44 @@ exports.postAddProduct = (req, res, next) => {
 
 exports.getEditProduct = (req, res, next) => {
 
-    Product.findOne ({ _id:req.params.productid, userId:req.user._id})
-    // .populate('categories' , 'name -_id')
-    .then(product =>{
-        console.log(product);
-        if(!product){
-            return res.redirect('/');
-        }
-        return product;
-    })
+    Product.findOne({ _id: req.params.productid, userId: req.user._id })
+        // .populate('categories' , 'name -_id')
+        .then(product => {
+            console.log(product);
+            if (!product) {
+                return res.redirect('/');
+            }
+            return product;
+        })
         .then(product => {
 
             Category.find()
-            .then(categories => {
+                .then(categories => {
 
-                categories = categories.map(category => {
+                    categories = categories.map(category => {
 
-                    if(product.categories){
-                        product.categories.find(item => {
-                            if(item.toString() === category._id.toString()){
-                                category.selected = true;
-                            }
-                        })
-                    }
+                        if (product.categories) {
+                            product.categories.find(item => {
+                                if (item.toString() === category._id.toString()) {
+                                    category.selected = true;
+                                }
+                            })
+                        }
 
 
 
-                    return category;
+                        return category;
+                    })
+
+                    res.render('admin/edit-product', {
+                        title: 'Edit Product',
+                        path: '/admin/products',
+                        product: product,
+                        categories: categories
+                    });
                 })
 
-                res.render('admin/edit-product', {
-                    title: 'Edit Product',
-                    path: '/admin/products',
-                    product: product,
-                    categories:categories
-                });
-            })
 
-            
 
         })
         .catch(err => {
@@ -118,18 +150,18 @@ exports.postEditProduct = (req, res, next) => {
     const price = req.body.price;
     const imageUrl = req.body.imageUrl;
     const description = req.body.description;
-    const ids = req.body.categoryids; 
+    const ids = req.body.categoryids;
 
     // update first id seçmeden direkt update sorgusunu yolla database e
 
-    Product.updateOne({ _id: id, userId:req.user._id }, //deprecated use updatOne
+    Product.updateOne({ _id: id, userId: req.user._id }, //deprecated use updatOne
         {
             $set: {
                 name: name,
                 price: price,
                 imageUrl: imageUrl,
                 description: description,
-                categories : ids
+                categories: ids
             }
         }
     )
@@ -138,6 +170,7 @@ exports.postEditProduct = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err); 
         })
 
 
@@ -164,9 +197,9 @@ exports.postDeleteProduct = (req, res, next) => {
     const id = req.body.productid;
 
     // fiyatı 2000 olan hepsini silmek için .deleteMany({price : 2000})
-    Product.deleteOne({ _id: id , userId: req.user._id}) //findByIdAndRemove(id)
+    Product.deleteOne({ _id: id, userId: req.user._id }) //findByIdAndRemove(id)
         .then((result) => {
-            if(result.deletedCount === 0){
+            if (result.deletedCount === 0) {
                 return res.redirect('/')
             }
 
@@ -177,18 +210,8 @@ exports.postDeleteProduct = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err); 
         });
-
-
-    /*
-     Product.destroy({
-         where: {id : id}
-     }).then(()=> {
-         res.redirect('/admin/products?action=delete');
-     }).catch(err => {
-         console.log(err);
-     });*/
-
 }
 
 exports.getAddCategory = (req, res, next) => {
@@ -212,15 +235,29 @@ exports.postAddCategory = (req, res, next) => {
 
     category.save()
         .then(result => {
-            console.log(result);
+            // console.log(result);
             res.redirect('/admin/categories?action=create');
 
         })
         .catch(err => {
-            console.log(err);
+
+            if (err.name == 'ValidationError') {
+                let message = '';
+                for (field in err.errors) {
+                    message += err.errors[field].message + '<br>';
+                }
+                res.render('admin/add-category', {
+                    title: 'New Category',
+                    path: '/admin/add-category',
+                    errorMessage:message
+                });
+
+            } else {
+                console.log(err);
+                next(err);
+            }
+
         })
-
-
 }
 
 exports.getCategories = (req, res, next) => {
@@ -235,8 +272,8 @@ exports.getCategories = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err); 
         })
-
 }
 
 exports.getEditCategory = (req, res, next) => {
@@ -251,6 +288,7 @@ exports.getEditCategory = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err); 
         })
 }
 
@@ -260,31 +298,33 @@ exports.postEditCategory = (req, res, next) => {
     const name = req.body.name;
     const description = req.body.description;
 
-Category.findById(id)
+    Category.findById(id)
         .then(category => {
             category.name = name;
             category.description = description;
             return category.save();
         })
-        .then(() =>{
+        .then(() => {
             res.redirect('/admin/categories?action=edit');
         })
         .catch(err => {
             console.log(err);
+            next(err); 
         })
 }
 
-exports.postDeleteCategory = (req,res,next) => {
+exports.postDeleteCategory = (req, res, next) => {
 
     const id = req.body.categoryid;
 
     Category.findOneAndDelete(id)
-    .then(()=>{
-        res.redirect('/admin/categories?action=delete');
-    })
-    .catch(err =>{
-        console.log(err);
-    })
+        .then(() => {
+            res.redirect('/admin/categories?action=delete');
+        })
+        .catch(err => {
+            console.log(err);
+            next(err); 
+        })
 }
 
 

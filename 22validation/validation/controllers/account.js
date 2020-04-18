@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Login= require('../models/login');
 const bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
 const crypto = require('crypto');
@@ -23,38 +24,69 @@ exports.postLogin = (req , res, next) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    User.findOne({email:email})
-    .then( user => {
-        if(!user){
-            req.session.errorMessage = "bu mail ile kayıt yok  !";
-            req.session.save(function(err){
-                console.log(err);
-                return res.redirect('/login');
-            })
-        }
-        bcrypt.compare(password,user.password)
-        .then(isSuccess => {
-            if(isSuccess){
-                //login
-                req.session.user =user;
-                req.session.isAuthenticated = true;
-                return req.session.save(function(err){
-                    var url = req.session.redirectTo || '/';
-                    delete req.session.redirectTo;
-                    console.log(err);
-                    res.redirect(url);
-                });
+    const loginModel = new Login({
+        email: email,
+        password : password
+    });
 
+    loginModel
+    .validate()
+    .then( () => {
+        User.findOne({email:email})
+        .then( user => {
+            if(!user){
+                req.session.errorMessage = "there is no such an account!";
+                req.session.save(function(err){
+                    console.log(err);
+                    return res.redirect('/login');
+                })
             }
-            res.redirect('/login');
+            bcrypt.compare(password,user.password)
+            .then(isSuccess => {
+                if(isSuccess){
+                    //login
+                    req.session.user =user;
+                    req.session.isAuthenticated = true;
+                    return req.session.save(function(err){
+                        var url = req.session.redirectTo || '/';
+                        delete req.session.redirectTo;
+                        console.log(err);
+                        res.redirect(url);
+                    });
+    
+                }
+                req.session.errorMessage = "wrong email or password.sorry can't tell which is wrong";
+                req.session.save(function(err){
+                    console.log(err);
+                    return res.redirect('/login');
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
         })
         .catch(err => {
             console.log(err);
         })
+    
     })
-    .catch(err => {
-        console.log(err);
-    })
+    .catch( (err) => {
+        if(err.name == 'ValidationError'){
+            let message = '';
+            for(field in err.errors){
+             message += err.errors[field].message + '<br>';
+            }
+            res.render('account/login', {
+                path: '/login',
+                title: 'Login',
+                errorMessage:message
+            });  
+        }else{
+            next(err);
+        }
+    });
+
+
 
 }
 
@@ -86,9 +118,7 @@ exports.postRegister = (req , res, next) => {
                 console.log(err);
                 return res.redirect('/register');
             }) 
-
         }
-
          return bcrypt.hash(password ,10);
 
     })
@@ -117,7 +147,19 @@ exports.postRegister = (req , res, next) => {
 
     })
     .catch(err => {
-        console.log(err);
+        if(err.name == 'ValidationError'){
+            let message = '';
+            for(field in err.errors){
+             message += err.errors[field].message + '<br>';
+            }
+            res.render('account/register', {
+                path: '/register',
+                title: 'Register',
+                errorMessage:message
+            });  
+        }else{
+            next(err);
+        }
     })
 
 }
@@ -179,6 +221,7 @@ exports.postReset = (req , res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err);  
         })
 
     })
@@ -216,9 +259,8 @@ exports.getNewPassword = (req, res, next ) => {
     });
  }).catch(err => {
      console.log(err);
+     next(err); 
  })
-
-
 
 }
 
@@ -248,6 +290,7 @@ User.findOne({
     res.redirect('/login');
 })
 .catch(err => {
+    next(err); 
     console.log(err);
 })
 }
