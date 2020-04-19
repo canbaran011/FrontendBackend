@@ -6,7 +6,7 @@ block styles
 block content
     h4 Login
     if errorMessage 
-        div.alert.alert-danger.col-sm-7 #{errorMessage}
+        div.alert.alert-danger.col-sm-7 !{errorMessage}
     form(action="/login" method="POST")
         input(type="hidden" name="_csrf" value=`${csrfToken}`)
         .form-group.row

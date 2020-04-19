@@ -5,7 +5,7 @@ const productSchema = mongoose.Schema({
         type:String,
         required:[true, 'You should enter product NAME'], //olayı dil bazında yönetmek errorMessages 
         minlength:[ 5, 'Name should be at least 5 character'],
-        maxlength:255,
+        maxlength:50,
         lowercase: true, //database de her zaman küçük harfle kullanmak için 
         trim: true
     },

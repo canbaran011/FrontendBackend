@@ -18,6 +18,7 @@ exports.getProducts = (req, res, next) => {
         })
         .catch((err) => {
             console.log(err);
+            next(err);
         });
 
 
@@ -70,7 +71,23 @@ exports.postAddProduct = (req, res, next) => {
             res.redirect('/admin/products');
         })
         .catch(err => {
-            console.log(err);
+           
+            if (err.name == 'ValidationError') {
+                let message = '';
+                for (field in err.errors) {
+                    message += err.errors[field].message + '<br>';
+                }
+                res.render('admin/add-product', {
+                    title: 'New Product',
+                    path: '/admin/add-product',
+                    errorMessage: message,
+                    // categories: categories
+                   
+                });
+            } else {
+                next(err);
+            }
+            // console.log(err.message);
         });
 
 
@@ -226,7 +243,21 @@ exports.postAddCategory = (req, res, next) => {
 
         })
         .catch(err => {
-            console.log(err);
+            if (err.name == 'ValidationError') {
+                let message = '';
+                for (field in err.errors) {
+                    message += err.errors[field].message + '<br>';
+                }
+                res.render('admin/add-category', {
+                    title: 'New Category',
+                    path: '/admin/add-category',
+                    errorMessage:message
+                });
+
+            } else {
+                console.log(err);
+                next(err);
+            }
         })
 
 
@@ -244,6 +275,7 @@ exports.getCategories = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err);
         })
 
 }
@@ -260,6 +292,7 @@ exports.getEditCategory = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err);
         })
 }
 
@@ -280,6 +313,7 @@ Category.findById(id)
         })
         .catch(err => {
             console.log(err);
+            next(err);
         })
 }
 
@@ -293,9 +327,9 @@ exports.postDeleteCategory = (req,res,next) => {
     })
     .catch(err =>{
         console.log(err);
+        next(err);
     })
 }
-
 
 // const prd = Product.build({
 //     name: name,
@@ -311,7 +345,6 @@ exports.postDeleteCategory = (req,res,next) => {
 // .catch(err => {
 //     console.log(err);
 // });
-
 
     /*
      Product.destroy({

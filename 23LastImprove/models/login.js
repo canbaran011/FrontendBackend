@@ -5,15 +5,14 @@ const loginSchema = mongoose.Schema({
 
     email: {
         type: String,
-        required:true,
+        required: [true , "Please Enter an Email"],
         validate: [isEmail, 'wrong  email']
     },
     password: {
         type: String,
-        required:[ true , 'parola girmelisiniz']
+        required:[ true , 'Please Enter a password']
     }
 });
 
 
 module.exports = mongoose.model('Login', loginSchema)
-

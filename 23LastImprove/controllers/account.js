@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Login = require('../models/login');
 const bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
 const crypto = require('crypto');
@@ -23,10 +24,18 @@ exports.postLogin = (req , res, next) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    User.findOne({email:email})
+    const loginModel = new Login({
+        email: email,
+        password : password
+    });
+
+    loginModel
+    .validate()
+    .then( () =>{
+        User.findOne({email:email})
     .then( user => {
         if(!user){
-            req.session.errorMessage = "bu mail ile kayıt yok  !";
+            req.session.errorMessage = "there is no such an account!";
             req.session.save(function(err){
                 console.log(err);
                 return res.redirect('/login');
@@ -46,8 +55,12 @@ exports.postLogin = (req , res, next) => {
                 });
 
             }
-            res.redirect('/login');
-        })
+            req.session.errorMessage = "Wrong email or password. Sorry can't tell which is wrong";
+            req.session.save(function(err){
+                console.log(err);
+                return res.redirect('/login');
+            }) 
+               })
         .catch(err => {
             console.log(err);
         })
@@ -56,8 +69,24 @@ exports.postLogin = (req , res, next) => {
         console.log(err);
     })
 
+    })
+    .catch( (err) => {
+        if(err.name == 'ValidationError'){
+            let message = '';
+            for(field in err.errors){
+             message += err.errors[field].message + '<br>';
+            }
+            res.render('account/login', {
+                path: '/login',
+                title: 'Login',
+                errorMessage:message
+            });  
+        }else{
+            next(err);
+        }
+    });
+    
 }
-
 
 exports.getRegister = (req , res, next) => {
 
@@ -70,7 +99,6 @@ exports.getRegister = (req , res, next) => {
         errorMessage:errorMessage
     });
 }
-
 
 exports.postRegister = (req , res, next) => {
 
@@ -117,7 +145,19 @@ exports.postRegister = (req , res, next) => {
 
     })
     .catch(err => {
-        console.log(err);
+        if(err.name == 'ValidationError'){
+            let message = '';
+            for(field in err.errors){
+             message += err.errors[field].message + '<br>';
+            }
+            res.render('account/register', {
+                path: '/register',
+                title: 'Register',
+                errorMessage:message
+            });  
+        }else{
+            next(err);
+        }
     })
 
 }
@@ -133,7 +173,6 @@ exports.getReset = (req , res, next) => {
         errorMessage:errorMessage
     });
 }
-
 
 exports.postReset = (req , res, next) => {
 

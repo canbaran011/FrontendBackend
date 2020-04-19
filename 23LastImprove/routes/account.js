@@ -13,13 +13,11 @@ router.post('/register' ,locals,accountController.postRegister);
 
 router.get('/logout',locals, accountController.getLogout);
 
-
 router.get('/reset-password',locals, accountController.getReset);
 router.post('/reset-password',locals, accountController.postReset);
 
 router.get('/reset-password/:token',locals, accountController.getNewPassword);
 router.post('/new-password',locals, accountController.postNewPassword);
-
 
 module.exports = router; 
 

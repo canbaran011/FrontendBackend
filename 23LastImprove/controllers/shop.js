@@ -23,6 +23,7 @@ exports.getIndex = (req, res, next) => {
         })
         .catch((err) => {
             console.log(err);
+            next(err);
         });
 }
 
@@ -44,6 +45,7 @@ exports.getProducts = (req, res, next) => {
         })
         .catch((err) => {
             console.log(err);
+            next(err);
         });
 }
 
@@ -69,6 +71,7 @@ exports.getProductsByCategoryId = (req, res, next) => {
         })
         .catch((err) => {
             console.log(err);
+            next(err);
         })
 }
 
@@ -86,9 +89,9 @@ exports.getProduct = (req, res, next) => {
         })
         .catch((err) => {
             console.log(err);
+            next(err);
         });
 }
-
 
 exports.getCart = (req, res, next) => {
     req.user
@@ -102,6 +105,7 @@ exports.getCart = (req, res, next) => {
             });
         }).catch(err => {
             console.log(err);
+            next(err);
         });
 }
 
@@ -115,7 +119,10 @@ exports.postCart = (req, res, next) => {
         .then(() => {
             res.redirect('/cart');
         })
-        .catch(err => console.log(err));
+        .catch(err =>{
+             console.log(err)
+             next(err);
+            });
 }
 
 exports.postCartItemDelete = (req, res, next) => {
@@ -140,7 +147,9 @@ exports.getOrders = (req, res, next) => {
             });
 
         })
-        .catch(err => console.log(err));
+        .catch(err =>{
+            next(err);
+            console.log(err)});
 }
 
 exports.postOrder = (req, res, next) => {
@@ -177,15 +186,10 @@ exports.postOrder = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err);
         });
 }
-
-
-
-   
-   
-   
-   
+    
    // eq (equal)
     // ne (not equal)
     // gt (greater than)

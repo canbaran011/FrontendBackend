@@ -80,11 +80,16 @@ app.use(userRoutes);
 app.use(accountRoutes);
 
 app.use(errorController.get404Page);
+app.use((err,req,res,next) => {
+    // error logging comes here
+    res.status(500).render('error/500',{title:'Err500'})
+})
 
 
 mongoose.connect(ConnectionString)
     .then(() => {
         console.log('CONNECTED TO : MONGODB');
+        console.log('http://localhost:3000/');
         app.listen(3000);
 
     })
