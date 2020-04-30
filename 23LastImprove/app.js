@@ -89,9 +89,12 @@ app.use((err,req,res,next) => {
 mongoose.connect(ConnectionString)
     .then(() => {
         console.log('CONNECTED TO : MONGODB');
-        console.log('http://localhost:3000/');
-        app.listen(3000);
+       
+        //PORT 
+       const port = process.env.PORT || 3000;
+        app.listen(port); //was 3000
 
+        console.log(`listening on ${port}`); 
     })
     .catch(err => {
         console.log(err);
