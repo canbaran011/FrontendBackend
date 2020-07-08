@@ -159,7 +159,7 @@ sgMail.send(msg);
 +Unit testing                                  -will find a source// done . unit test learned
 +Css Grid & Flex                               +done // very useful website founded
 +JS deep {RegExp}                              + not needed
-+Charity ' project                             +started // still to much to go
++Charity ' project                             +started // still  much to go
 +apply using sass                              +using currently
 +Figma or Equal Design                         +made 1 2 things  
 +MockUps Sliders Photos                        ? 
