@@ -11,7 +11,7 @@ Frontend &amp; Backend Works
 * nodejs +
 * db (mysql , mongodb) +
 * etc: redis,microservice
-* testing ?
-* architectures ?
+* testing 
+* architectures 
 * structures
 * algorithms
